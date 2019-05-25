@@ -7,6 +7,7 @@ target 'The Winner' do
 	pod 'Alamofire'
 	pod 'SwiftyJSON'
 	pod 'Toast-Swift'
+	pod 'SDWebImage/WebP'
   # Pods for The Winner
 
 end
