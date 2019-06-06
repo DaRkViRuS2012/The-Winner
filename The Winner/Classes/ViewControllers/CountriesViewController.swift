@@ -22,7 +22,7 @@ class CountriesViewController: AbstractController {
         
         let nib = UINib(nibName: cellId, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellId)
-        
+        self.showNavBackButton = trues
         getCities()
     }
     
