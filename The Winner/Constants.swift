@@ -22,8 +22,8 @@ struct AppConfig {
     /// Set navigation bar style, text and color
     static func setNavigationStyle() {
         // set text title attributes
-        let attrs = [NSForegroundColorAttributeName : UIColor.white,
-                     NSFontAttributeName : AppFonts.normal]
+        let attrs = [NSAttributedStringKey.foregroundColor : UIColor.white,
+                     NSAttributedStringKey.font : AppFonts.normal]
         UINavigationBar.appearance().titleTextAttributes = attrs
         // set background color
         UINavigationBar.appearance().barTintColor = UIColor(red: 53, green: 125, blue: 29)
