@@ -279,7 +279,7 @@ class ApiManager: NSObject {
     
     func getoffers(completionBlock: @escaping (_ success: Bool, _ error: ServerError?,_ result : [Offer]) -> Void) {
         // url & parameters
-        let bottleURL = "\(baseURL)/getAllOffer.php"
+        let bottleURL = "\(baseURL)/offers.php"
         
         // build request
         Alamofire.request(bottleURL, method: .get).responseJSON { (responseObject) -> Void in
@@ -292,7 +292,6 @@ class ApiManager: NSObject {
                 } else {
                     if let array = jsonResponse.array{
                         let cities = array.map{Offer(json:$0)}
-                        //                        DataStore.shared.notifications = notifications
                         completionBlock(true , nil,cities)
                     }else{
                         completionBlock(true , nil,[])

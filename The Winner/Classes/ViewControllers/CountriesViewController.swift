@@ -23,7 +23,7 @@ class CountriesViewController: AbstractController {
         let nib = UINib(nibName: cellId, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellId)
 //        self.showNavBackButton = true
-        self.showNavEditButton = true
+        self.showNavAboutAndOffersButton = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -151,7 +151,9 @@
         <scene sceneID="R1i-fi-fGg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pbs-kt-r4h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="المطاعم" image="restaurant" id="UP7-dk-BAV"/>
+                    <tabBarItem key="tabBarItem" title="المطاعم" image="restaurant" id="UP7-dk-BAV">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BFy-wU-EVW">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -170,7 +172,9 @@
         <scene sceneID="VAO-PG-bAI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hjE-ML-MiD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="الالعاب" image="cards" id="a31-QJ-Evb"/>
+                    <tabBarItem key="tabBarItem" title="الالعاب" image="cards" id="a31-QJ-Evb">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OQv-4p-G8B">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -236,16 +240,51 @@
             </objects>
             <point key="canvasLocation" x="2222" y="-590"/>
         </scene>
-        <!--View Controller-->
+        <!--Offers View Controller-->
         <scene sceneID="RCk-GT-9v0">
             <objects>
-                <viewController id="Ysh-Cu-lqF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OffersViewController" id="Ysh-Cu-lqF" customClass="OffersViewController" customModule="The_Winner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8No-a0-wqe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hSi-Uh-UIJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WG2-e2-phq">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YIQ-RD-lRz">
+                                        <rect key="frame" x="10" y="10" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ysh-Cu-lqF" id="fxs-q8-jNc"/>
+                                    <outlet property="delegate" destination="Ysh-Cu-lqF" id="TII-da-Mm1"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hSi-Uh-UIJ" firstAttribute="leading" secondItem="K42-vL-AyW" secondAttribute="leading" id="3XR-CA-KsO"/>
+                            <constraint firstAttribute="trailing" secondItem="hSi-Uh-UIJ" secondAttribute="trailing" id="LQ3-V7-XmS"/>
+                            <constraint firstItem="hSi-Uh-UIJ" firstAttribute="top" secondItem="K42-vL-AyW" secondAttribute="top" id="MgY-Vr-smf"/>
+                            <constraint firstAttribute="bottom" secondItem="hSi-Uh-UIJ" secondAttribute="bottom" id="O56-aY-Pxz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="K42-vL-AyW"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="hSi-Uh-UIJ" id="cen-vI-Yl7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Bo-Fb-PcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

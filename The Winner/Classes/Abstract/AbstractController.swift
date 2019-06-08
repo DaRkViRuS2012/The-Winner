@@ -197,17 +197,40 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
         }
     }
     
-//    var showNavMessageAndNotificationButton: Bool = false {
-//        didSet {
-//            if (showNavMessageAndNotificationButton) {
-//                navNotificationsButton.addBadge(number: "20")
-//                self.navigationItem.rightBarButtonItems = [navNotificationsButton,navMessagesButton]
-//            } else {
-//                self.navigationItem.rightBarButtonItem = nil
-//                self.navigationItem.rightBarButtonItems = nil
-//            }
-//        }
-//    }
+    var showNavOfferButton: Bool = false {
+        didSet {
+            if (showNavOfferButton) {
+                self.navigationItem.rightBarButtonItem = navOfferButton
+            } else {
+                self.navigationItem.rightBarButtonItem = nil
+                self.navigationItem.rightBarButtonItems = nil
+            }
+        }
+    }
+    
+    
+    var showNavAboutButton: Bool = false {
+        didSet {
+            if (showNavAboutButton) {
+                self.navigationItem.rightBarButtonItem = navAboutButton
+            } else {
+                self.navigationItem.rightBarButtonItem = nil
+                self.navigationItem.rightBarButtonItems = nil
+            }
+        }
+    }
+    
+    
+    var showNavAboutAndOffersButton: Bool = false {
+        didSet {
+            if (showNavAboutAndOffersButton) {
+                self.navigationItem.rightBarButtonItems = [navAboutButton,navOfferButton]
+            } else {
+                self.navigationItem.rightBarButtonItem = nil
+                self.navigationItem.rightBarButtonItems = nil
+            }
+        }
+    }
     
     // MARK: Status Bar
     func setStatuesBarDark() {
@@ -258,6 +281,16 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
     }
     
     @objc func editButtonAction(_ sender:AnyObject){
+        
+    }
+    
+    @objc func offerButtonAction(_ sender:AnyObject){
+        
+    }
+    
+    
+    @objc func aboutButtonAction(_ sender:AnyObject){
+        
     }
     
     @objc  func backButtonAction(_ sender: AnyObject) {
@@ -354,8 +387,7 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
         return true
     }
     
-    @IBAction func unwindToRoot(segue: UIStoryboardSegue)
-    {
+    @IBAction func unwindToRoot(segue: UIStoryboardSegue){
         print("unwind!!")
     }
     

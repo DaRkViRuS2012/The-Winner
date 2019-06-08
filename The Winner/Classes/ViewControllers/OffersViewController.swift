@@ -9,22 +9,111 @@
 import UIKit
 
 class OffersViewController: AbstractController {
-
+    
+    @IBOutlet weak var collectionView:UICollectionView!
+    
+    var offers:[Offer] = []
+    var cellId = "OfferCell"
+    
+    var res_id:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.setNavBarTitle(title:"العروض")
+        
+        let nib = UINib(nibName: cellId, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: cellId)
+        self.showNavBackButton = true
+        self.showNavAboutAndOffersButton = true
+        if let id = res_id{
+            getOffers(id)
+        }else{
+            getAllOffers()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
-    */
+    
+    
+    func getOffers(_ id:String){
+        
+        self.showActivityLoader(true)
+        ApiManager.shared.getOffersBy(id: id) { (success, error, result) in
+            
+            self.showActivityLoader(false)
+            if success{
+                self.offers = result
+                self.collectionView.reloadData()
+            }
+            if error != nil{
+                if let msg = error?.errorName{
+                    self.showMessage(message: msg, type: .error)
+                }
+            }
+        }
+        
+    }
+    
+    func getAllOffers(){
+        
+        self.showActivityLoader(true)
+        ApiManager.shared.getoffers { (success, error, result) in
+            
+            self.showActivityLoader(false)
+            if success{
+                self.offers = result
+                self.collectionView.reloadData()
+            }
+            if error != nil{
+                if let msg = error?.errorName{
+                    self.showMessage(message: msg, type: .error)
+                }
+            }
+        }
+        
+    }
+    
+    
+    
+    
+}
 
+extension OffersViewController:UICollectionViewDelegate,UICollectionViewDataSource{
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return offers.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! OfferCell
+        cell.offer = offers[indexPath.item]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+}
+
+
+extension OffersViewController:UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width:CGFloat = self.view.bounds.width  - 16
+        let height:CGFloat = 350.0
+        return CGSize(width: width, height: height)
+    }
+    
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    //        return 10
+    //    }
 }

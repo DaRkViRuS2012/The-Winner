@@ -85,6 +85,8 @@
 		147E1F0B2299D8D7008501B2 /* RegionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147E1F092299D8D7008501B2 /* RegionCell.xib */; };
 		147E1F0E2299DCB0008501B2 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147E1F0C2299DCAF008501B2 /* RestaurantCell.swift */; };
 		147E1F0F2299DCB0008501B2 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147E1F0D2299DCAF008501B2 /* RestaurantCell.xib */; };
+		14DAEDA922ABEB3F007F8C2D /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAEDA722ABEB3F007F8C2D /* OfferCell.swift */; };
+		14DAEDAA22ABEB3F007F8C2D /* OfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DAEDA822ABEB3F007F8C2D /* OfferCell.xib */; };
 		9A3D495AC5E9CCB917BD6A56 /* Pods_The_Winner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E78D04C0E27E81AF00B90226 /* Pods_The_Winner.framework */; };
 /* End PBXBuildFile section */
 
@@ -174,6 +176,8 @@
 		147E1F092299D8D7008501B2 /* RegionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegionCell.xib; sourceTree = "<group>"; };
 		147E1F0C2299DCAF008501B2 /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		147E1F0D2299DCAF008501B2 /* RestaurantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
+		14DAEDA722ABEB3F007F8C2D /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
+		14DAEDA822ABEB3F007F8C2D /* OfferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferCell.xib; sourceTree = "<group>"; };
 		6D1E7D8E69EBBA90902D8410 /* Pods-The Winner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Winner.release.xcconfig"; path = "Pods/Target Support Files/Pods-The Winner/Pods-The Winner.release.xcconfig"; sourceTree = "<group>"; };
 		803F72CBBB0CC7A64434E6EF /* Pods-The Winner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Winner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The Winner/Pods-The Winner.debug.xcconfig"; sourceTree = "<group>"; };
 		E78D04C0E27E81AF00B90226 /* Pods_The_Winner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Winner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -414,6 +418,8 @@
 				147E1F092299D8D7008501B2 /* RegionCell.xib */,
 				147E1F0C2299DCAF008501B2 /* RestaurantCell.swift */,
 				147E1F0D2299DCAF008501B2 /* RestaurantCell.xib */,
+				14DAEDA722ABEB3F007F8C2D /* OfferCell.swift */,
+				14DAEDA822ABEB3F007F8C2D /* OfferCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -474,9 +480,10 @@
 			};
 			buildConfigurationList = 147E1DBB2299C1F4008501B2 /* Build configuration list for PBXProject "The Winner" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = ar;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				ar,
 				Base,
 			);
 			mainGroup = 147E1DB72299C1F4008501B2;
@@ -515,6 +522,7 @@
 				147E1DEC2299C4CD008501B2 /* MullerBold.otf in Resources */,
 				147E1DF92299C4CD008501B2 /* OpenSansBold.ttf in Resources */,
 				147E1EBC2299C4FF008501B2 /* CountryPicker.bundle in Resources */,
+				14DAEDAA22ABEB3F007F8C2D /* OfferCell.xib in Resources */,
 				147E1DC92299C1F5008501B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,6 +633,7 @@
 				147E1EA82299C4FF008501B2 /* ShadowLineView.swift in Sources */,
 				147E1EB92299C4FF008501B2 /* PassthroughView.m in Sources */,
 				147E1EA92299C4FF008501B2 /* XUIButton.swift in Sources */,
+				14DAEDA922ABEB3F007F8C2D /* OfferCell.swift in Sources */,
 				147E1EA52299C4FF008501B2 /* UIColor.swift in Sources */,
 				147E1EBA2299C4FF008501B2 /* UIStoryBoard.swift in Sources */,
 				147E1EA22299C4FF008501B2 /* Collection.swift in Sources */,
