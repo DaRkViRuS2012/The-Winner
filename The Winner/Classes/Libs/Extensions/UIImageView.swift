@@ -19,6 +19,7 @@ extension UIImageView {
 //        self.kf.setImage(with: URL(string: tempurl)!, placeholder: image)
         self.sd_setShowActivityIndicatorView(true)
         self.sd_setIndicatorStyle(.gray)
+        
         self.sd_setImage(with: URL(string: url))
     }
 

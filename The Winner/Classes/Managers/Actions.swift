@@ -37,17 +37,23 @@ class Action: NSObject {
 //    }
 //}
 //
-//class ActionShowPostCategories: Action {
-//    override class func execute() {
-//        if DataStore.shared.isLoggedin {
-//            let ViewController = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "CategoriesSubscriptionViewController") as! CategoriesSubscriptionViewController
-//            ViewController.modalTransitionStyle = .crossDissolve
-//            ViewController.modalPresentationStyle = .overFullScreen
-//            let nav = UINavigationController(rootViewController: ViewController)
-//            UIApplication.visibleViewController()?.present(nav, animated: true, completion: nil)
-//        }
-//    }
-//}
+class ActionShowAboutUs:Action{
+    override class func execute(){
+//        let vc = UIStoryboard.pharmacyStoryboard.instantiateViewController(withIdentifier: "NewMedicineViewController") as! NewMedicineViewController
+//        vc.nid = uid
+//        let nav = UINavigationController(rootViewController: vc)
+//        UIApplication.visibleViewController()?.present(nav, animated: true, completion: nil)
+    }
+}
 
+
+class ActionShowOffers:Action{
+    override class func execute(){
+                let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "OffersViewController") as! OffersViewController
+        
+        
+                UIApplication.visibleViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
+}
 
 //CategoriesSubscriptionViewController

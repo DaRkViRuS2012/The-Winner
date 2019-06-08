@@ -124,7 +124,7 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
         let _navProfileButton = UIButton()
         _navProfileButton.setBackgroundImage(UIImage(named: "offer"), for: .normal)
         _navProfileButton.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
-        _navProfileButton.addTarget(self, action: #selector(editButtonAction(_:)), for: .touchUpInside)
+        _navProfileButton.addTarget(self, action: #selector(offerButtonAction(_:)), for: .touchUpInside)
         return UIBarButtonItem(customView: _navProfileButton)
     }
     
@@ -133,7 +133,7 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
         let _navProfileButton = UIButton()
         _navProfileButton.setBackgroundImage(UIImage(named: "about"), for: .normal)
         _navProfileButton.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
-        _navProfileButton.addTarget(self, action: #selector(editButtonAction(_:)), for: .touchUpInside)
+        _navProfileButton.addTarget(self, action: #selector(aboutButtonAction(_:)), for: .touchUpInside)
         return UIBarButtonItem(customView: _navProfileButton)
     }
     
@@ -269,7 +269,7 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.view.endEditing(true)
-        UIApplication.shared.statusBarStyle = .lightContent
+//        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     // Customize all view members (fonts - style - text)
@@ -285,7 +285,7 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
     }
     
     @objc func offerButtonAction(_ sender:AnyObject){
-        
+        ActionShowOffers.execute()
     }
     
     

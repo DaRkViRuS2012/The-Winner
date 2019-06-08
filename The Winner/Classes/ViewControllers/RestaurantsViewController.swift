@@ -74,7 +74,11 @@ extension RestaurantsViewController:UICollectionViewDelegate,UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let resID = restaurants[indexPath.item].rId
+        let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "OffersViewController") as! OffersViewController
+        vc.res_id = resID
         
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
