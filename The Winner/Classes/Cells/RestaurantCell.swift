@@ -52,9 +52,17 @@ class RestaurantCell: UICollectionViewCell {
     }
 
     @IBAction func callPhone1(_ sender: UIButton) {
+        guard let phone = restaurant?.phone else{ return}
+        callPhone(phone: phone)
     }
     
     @IBAction func callPhone2(_ sender: UIButton) {
+        guard let phone = restaurant?.phone2 else{ return}
+        callPhone(phone: phone)
     }
     
+    func callPhone(phone:String){
+        guard let number = URL(string: "tel://" + phone) else { return }
+        UIApplication.shared.openURL(number)
+    }
 }

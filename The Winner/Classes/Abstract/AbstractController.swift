@@ -114,9 +114,26 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
     /// Navigation bar profile button
     var navEditButton : UIBarButtonItem {
         let _navProfileButton = UIButton()
-        _navProfileButton.setBackgroundImage(UIImage(named: "ic_edit"), for: .normal)
+        _navProfileButton.setBackgroundImage(UIImage(named: "about"), for: .normal)
         _navProfileButton.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
          _navProfileButton.addTarget(self, action: #selector(editButtonAction(_:)), for: .touchUpInside)
+        return UIBarButtonItem(customView: _navProfileButton)
+    }
+    
+    var navOfferButton : UIBarButtonItem {
+        let _navProfileButton = UIButton()
+        _navProfileButton.setBackgroundImage(UIImage(named: "offer"), for: .normal)
+        _navProfileButton.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        _navProfileButton.addTarget(self, action: #selector(editButtonAction(_:)), for: .touchUpInside)
+        return UIBarButtonItem(customView: _navProfileButton)
+    }
+    
+    
+    var navAboutButton : UIBarButtonItem {
+        let _navProfileButton = UIButton()
+        _navProfileButton.setBackgroundImage(UIImage(named: "about"), for: .normal)
+        _navProfileButton.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        _navProfileButton.addTarget(self, action: #selector(editButtonAction(_:)), for: .touchUpInside)
         return UIBarButtonItem(customView: _navProfileButton)
     }
     
@@ -179,6 +196,18 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
             }
         }
     }
+    
+//    var showNavMessageAndNotificationButton: Bool = false {
+//        didSet {
+//            if (showNavMessageAndNotificationButton) {
+//                navNotificationsButton.addBadge(number: "20")
+//                self.navigationItem.rightBarButtonItems = [navNotificationsButton,navMessagesButton]
+//            } else {
+//                self.navigationItem.rightBarButtonItem = nil
+//                self.navigationItem.rightBarButtonItems = nil
+//            }
+//        }
+//    }
     
     // MARK: Status Bar
     func setStatuesBarDark() {
@@ -280,8 +309,10 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
         if (show) {
             // create a new style
             var style = ToastStyle()
-            style.backgroundColor = UIColor.init(white: 0.35, alpha: 0.8)
-            style.activitySize = CGSize.init(width: 80, height: 80)
+            style.backgroundColor = UIColor.init(white: 255, alpha: 0.1)
+            style.activitySize = CGSize.init(width: 100, height: 100)
+            style.activityIndicatorColor = AppColors.primary
+            
             ToastManager.shared.style = style
             // present the toast with the new style
             self.view.makeToastActivity(.center)
@@ -326,6 +357,11 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
     @IBAction func unwindToRoot(segue: UIStoryboardSegue)
     {
         print("unwind!!")
+    }
+    
+    func callPhone(phone:String){
+        guard let number = URL(string: "tel://" + phone) else { return }
+        UIApplication.shared.openURL(number)
     }
 }
 

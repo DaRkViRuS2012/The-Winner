@@ -353,7 +353,7 @@ struct ServerError {
             case .unknown:
                 return "ERROR_UNKNOWN".localized
             case .connection:
-                return "ERROR_NO_CONNECTION".localized
+                return "لا يوجد اتصال بالانترنت"
             case .authorization:
                 return "ERROR_NOT_AUTHORIZED".localized
             case .alreadyExists:
@@ -387,6 +387,7 @@ struct ServerError {
         get {
             var error = ServerError()
             error.code = ErrorType.connection.rawValue
+            error.errorName = ErrorType.connection.errorMessage
             return error
         }
     }

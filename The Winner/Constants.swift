@@ -37,6 +37,7 @@ struct AppConfig {
     static func setTabBarStyle(){
         
         UITabBar.appearance().tintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
+        
     }
 }
 

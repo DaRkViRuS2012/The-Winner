@@ -25,6 +25,11 @@ class RegionsViewController: AbstractController {
         let nib = UINib(nibName: cellId, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellId)
         self.showNavBackButton = true
+    
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getRegions()
     }
     
