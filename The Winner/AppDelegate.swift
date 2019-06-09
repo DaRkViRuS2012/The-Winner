@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         AppConfig.setNavigationStyle()
-        AppConfig.setTabBarStyle()
+       // AppConfig.setTabBarStyle()
         return true
     }
 

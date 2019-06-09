@@ -35,9 +35,9 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="9Bk-RG-fPW" firstAttribute="top" secondItem="Eww-Bw-SP6" secondAttribute="top" id="Eqz-DE-QCE"/>
-                                    <constraint firstItem="9Bk-RG-fPW" firstAttribute="leading" secondItem="Eww-Bw-SP6" secondAttribute="leading" id="TjD-UP-qgJ"/>
+                                    <constraint firstItem="9Bk-RG-fPW" firstAttribute="left" secondItem="Eww-Bw-SP6" secondAttribute="left" id="TjD-UP-qgJ"/>
                                     <constraint firstAttribute="height" constant="30" id="iUC-Vn-bkP"/>
-                                    <constraint firstAttribute="trailing" secondItem="9Bk-RG-fPW" secondAttribute="trailing" id="xJX-KG-ZbA"/>
+                                    <constraint firstAttribute="right" secondItem="9Bk-RG-fPW" secondAttribute="right" id="xJX-KG-ZbA"/>
                                     <constraint firstAttribute="bottom" secondItem="9Bk-RG-fPW" secondAttribute="bottom" id="zhw-QX-zBW"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -164,10 +164,10 @@
                                                             <constraint firstItem="cuv-A9-nzb" firstAttribute="top" secondItem="0Vr-SS-MVG" secondAttribute="top" id="HZf-bU-8Fx"/>
                                                             <constraint firstAttribute="bottom" secondItem="cuv-A9-nzb" secondAttribute="bottom" id="OUG-rt-K1b"/>
                                                             <constraint firstItem="312-yb-dmN" firstAttribute="top" secondItem="0Vr-SS-MVG" secondAttribute="top" id="TN3-PV-gSR"/>
-                                                            <constraint firstAttribute="trailing" secondItem="312-yb-dmN" secondAttribute="trailing" id="Xlk-gn-4ij"/>
-                                                            <constraint firstItem="312-yb-dmN" firstAttribute="leading" secondItem="0Vr-SS-MVG" secondAttribute="leading" id="jAp-C1-hFe"/>
-                                                            <constraint firstItem="cuv-A9-nzb" firstAttribute="leading" secondItem="0Vr-SS-MVG" secondAttribute="leading" id="oKG-GS-hWA"/>
-                                                            <constraint firstAttribute="trailing" secondItem="cuv-A9-nzb" secondAttribute="trailing" id="sgD-zD-wfP"/>
+                                                            <constraint firstAttribute="right" secondItem="312-yb-dmN" secondAttribute="right" id="Xlk-gn-4ij"/>
+                                                            <constraint firstItem="312-yb-dmN" firstAttribute="left" secondItem="0Vr-SS-MVG" secondAttribute="left" id="jAp-C1-hFe"/>
+                                                            <constraint firstItem="cuv-A9-nzb" firstAttribute="left" secondItem="0Vr-SS-MVG" secondAttribute="left" id="oKG-GS-hWA"/>
+                                                            <constraint firstAttribute="right" secondItem="cuv-A9-nzb" secondAttribute="right" id="sgD-zD-wfP"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -196,14 +196,14 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="qzW-ua-qSo" firstAttribute="leading" secondItem="GRs-AH-Bls" secondAttribute="leading" id="1tg-1k-fsy"/>
-                                                            <constraint firstItem="S15-Fw-Dep" firstAttribute="leading" secondItem="GRs-AH-Bls" secondAttribute="leading" id="8Tl-F2-bpP"/>
+                                                            <constraint firstItem="qzW-ua-qSo" firstAttribute="left" secondItem="GRs-AH-Bls" secondAttribute="left" id="1tg-1k-fsy"/>
+                                                            <constraint firstItem="S15-Fw-Dep" firstAttribute="left" secondItem="GRs-AH-Bls" secondAttribute="left" id="8Tl-F2-bpP"/>
                                                             <constraint firstItem="S15-Fw-Dep" firstAttribute="top" secondItem="GRs-AH-Bls" secondAttribute="top" id="8ju-2M-5op"/>
                                                             <constraint firstItem="qzW-ua-qSo" firstAttribute="top" secondItem="GRs-AH-Bls" secondAttribute="top" id="Gdh-ud-JYj"/>
                                                             <constraint firstAttribute="bottom" secondItem="qzW-ua-qSo" secondAttribute="bottom" id="ZYy-WU-vvA"/>
                                                             <constraint firstAttribute="bottom" secondItem="S15-Fw-Dep" secondAttribute="bottom" id="hlE-si-oc7"/>
-                                                            <constraint firstAttribute="trailing" secondItem="S15-Fw-Dep" secondAttribute="trailing" id="htu-8t-5g8"/>
-                                                            <constraint firstAttribute="trailing" secondItem="qzW-ua-qSo" secondAttribute="trailing" id="wsM-eM-1u9"/>
+                                                            <constraint firstAttribute="right" secondItem="S15-Fw-Dep" secondAttribute="right" id="htu-8t-5g8"/>
+                                                            <constraint firstAttribute="right" secondItem="qzW-ua-qSo" secondAttribute="right" id="wsM-eM-1u9"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -224,10 +224,10 @@
                                     <constraint firstItem="3rt-HX-AS9" firstAttribute="top" secondItem="1DM-Gh-y7R" secondAttribute="top" id="Nik-rE-LZT"/>
                                     <constraint firstAttribute="bottom" secondItem="QmV-Zz-DRq" secondAttribute="bottom" id="Oke-4s-9Pu"/>
                                     <constraint firstAttribute="bottom" secondItem="3rt-HX-AS9" secondAttribute="bottom" id="PUv-HP-X5R"/>
-                                    <constraint firstItem="QmV-Zz-DRq" firstAttribute="leading" secondItem="1DM-Gh-y7R" secondAttribute="leading" id="WD7-SL-yMh"/>
-                                    <constraint firstAttribute="trailing" secondItem="3rt-HX-AS9" secondAttribute="trailing" id="c7c-5Z-9ci"/>
+                                    <constraint firstItem="QmV-Zz-DRq" firstAttribute="left" secondItem="1DM-Gh-y7R" secondAttribute="left" id="WD7-SL-yMh"/>
+                                    <constraint firstAttribute="right" secondItem="3rt-HX-AS9" secondAttribute="right" id="c7c-5Z-9ci"/>
                                     <constraint firstAttribute="height" constant="60" id="iTz-HR-ziN"/>
-                                    <constraint firstItem="3rt-HX-AS9" firstAttribute="leading" secondItem="QmV-Zz-DRq" secondAttribute="trailing" id="mK5-TC-EXc"/>
+                                    <constraint firstItem="3rt-HX-AS9" firstAttribute="left" secondItem="QmV-Zz-DRq" secondAttribute="right" id="mK5-TC-EXc"/>
                                     <constraint firstItem="QmV-Zz-DRq" firstAttribute="top" secondItem="1DM-Gh-y7R" secondAttribute="top" id="pcB-cz-S3s"/>
                                 </constraints>
                             </view>
@@ -247,8 +247,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="MO9-S3-gmk"/>
-                                    <constraint firstItem="E4D-RE-91v" firstAttribute="leading" secondItem="EA3-HL-ajK" secondAttribute="leading" id="MYH-EJ-RdD"/>
-                                    <constraint firstAttribute="trailing" secondItem="E4D-RE-91v" secondAttribute="trailing" constant="8" id="VCl-pM-1id"/>
+                                    <constraint firstItem="E4D-RE-91v" firstAttribute="left" secondItem="EA3-HL-ajK" secondAttribute="left" id="MYH-EJ-RdD"/>
+                                    <constraint firstAttribute="right" secondItem="E4D-RE-91v" secondAttribute="right" constant="8" id="VCl-pM-1id"/>
                                     <constraint firstItem="E4D-RE-91v" firstAttribute="top" secondItem="EA3-HL-ajK" secondAttribute="top" id="dt1-J1-Vol"/>
                                     <constraint firstAttribute="bottom" secondItem="E4D-RE-91v" secondAttribute="bottom" id="wvN-sq-E5C"/>
                                 </constraints>
@@ -257,17 +257,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tAD-zP-AS6" firstAttribute="top" secondItem="Eww-Bw-SP6" secondAttribute="bottom" id="7On-WG-77q"/>
-                            <constraint firstAttribute="trailing" secondItem="Eww-Bw-SP6" secondAttribute="trailing" id="BDB-2t-eUI"/>
+                            <constraint firstAttribute="right" secondItem="Eww-Bw-SP6" secondAttribute="right" id="BDB-2t-eUI"/>
                             <constraint firstItem="EA3-HL-ajK" firstAttribute="top" secondItem="tAD-zP-AS6" secondAttribute="bottom" id="HNT-E3-EBT"/>
-                            <constraint firstItem="1DM-Gh-y7R" firstAttribute="leading" secondItem="Ulb-uL-b3k" secondAttribute="leading" id="KRW-oP-5RM"/>
+                            <constraint firstItem="1DM-Gh-y7R" firstAttribute="left" secondItem="Ulb-uL-b3k" secondAttribute="left" id="KRW-oP-5RM"/>
                             <constraint firstItem="Eww-Bw-SP6" firstAttribute="top" secondItem="Ulb-uL-b3k" secondAttribute="top" id="MhY-kD-8qp"/>
-                            <constraint firstAttribute="trailing" secondItem="tAD-zP-AS6" secondAttribute="trailing" id="NE6-dB-vDI"/>
-                            <constraint firstAttribute="trailing" secondItem="EA3-HL-ajK" secondAttribute="trailing" id="Vav-FI-ukB"/>
+                            <constraint firstAttribute="right" secondItem="tAD-zP-AS6" secondAttribute="right" id="NE6-dB-vDI"/>
+                            <constraint firstAttribute="right" secondItem="EA3-HL-ajK" secondAttribute="right" id="Vav-FI-ukB"/>
                             <constraint firstItem="1DM-Gh-y7R" firstAttribute="top" secondItem="EA3-HL-ajK" secondAttribute="bottom" id="X3R-7p-Wvr"/>
-                            <constraint firstAttribute="trailing" secondItem="1DM-Gh-y7R" secondAttribute="trailing" id="ZvR-9G-A7t"/>
-                            <constraint firstItem="EA3-HL-ajK" firstAttribute="leading" secondItem="Ulb-uL-b3k" secondAttribute="leading" id="lRG-Rf-HoZ"/>
-                            <constraint firstItem="Eww-Bw-SP6" firstAttribute="leading" secondItem="Ulb-uL-b3k" secondAttribute="leading" id="lvh-nd-nA3"/>
-                            <constraint firstItem="tAD-zP-AS6" firstAttribute="leading" secondItem="Ulb-uL-b3k" secondAttribute="leading" id="vFY-on-HhL"/>
+                            <constraint firstAttribute="right" secondItem="1DM-Gh-y7R" secondAttribute="right" id="ZvR-9G-A7t"/>
+                            <constraint firstItem="EA3-HL-ajK" firstAttribute="left" secondItem="Ulb-uL-b3k" secondAttribute="left" id="lRG-Rf-HoZ"/>
+                            <constraint firstItem="Eww-Bw-SP6" firstAttribute="left" secondItem="Ulb-uL-b3k" secondAttribute="left" id="lvh-nd-nA3"/>
+                            <constraint firstItem="tAD-zP-AS6" firstAttribute="left" secondItem="Ulb-uL-b3k" secondAttribute="left" id="vFY-on-HhL"/>
                             <constraint firstAttribute="bottom" secondItem="1DM-Gh-y7R" secondAttribute="bottom" id="y9g-Nn-PMS"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -285,10 +285,10 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="Ulb-uL-b3k" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="a3U-Yy-eOS"/>
+                <constraint firstItem="Ulb-uL-b3k" firstAttribute="left" secondItem="gTV-IL-0wX" secondAttribute="left" id="a3U-Yy-eOS"/>
                 <constraint firstItem="Ulb-uL-b3k" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mz7-Lw-REv"/>
                 <constraint firstAttribute="bottom" secondItem="Ulb-uL-b3k" secondAttribute="bottom" id="ogb-ve-ORx"/>
-                <constraint firstAttribute="trailing" secondItem="Ulb-uL-b3k" secondAttribute="trailing" id="ovM-YN-QUQ"/>
+                <constraint firstAttribute="right" secondItem="Ulb-uL-b3k" secondAttribute="right" id="ovM-YN-QUQ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="310" height="300"/>

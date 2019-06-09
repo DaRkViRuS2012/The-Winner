@@ -11,6 +11,7 @@ import UIKit
 class RestaurantsViewController: AbstractController {
 
     @IBOutlet weak var collectionView:UICollectionView!
+    @IBOutlet weak var noResultView: UIView!
     
     var restaurants:[Restaurant] = []
     var cellId = "RestaurantCell"
@@ -43,6 +44,11 @@ class RestaurantsViewController: AbstractController {
             self.showActivityLoader(false)
             if success{
                 self.restaurants = result
+                if result.count == 0 {
+                    self.noResultView.isHidden = false
+                }else{
+                    self.noResultView.isHidden = true
+                }
                 self.collectionView.reloadData()
             }
             if error != nil{

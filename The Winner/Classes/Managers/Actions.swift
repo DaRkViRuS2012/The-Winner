@@ -39,10 +39,10 @@ class Action: NSObject {
 //
 class ActionShowAboutUs:Action{
     override class func execute(){
-//        let vc = UIStoryboard.pharmacyStoryboard.instantiateViewController(withIdentifier: "NewMedicineViewController") as! NewMedicineViewController
-//        vc.nid = uid
-//        let nav = UINavigationController(rootViewController: vc)
-//        UIApplication.visibleViewController()?.present(nav, animated: true, completion: nil)
+        let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "AboutViewController") as! AboutViewController
+        
+        
+        UIApplication.visibleViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

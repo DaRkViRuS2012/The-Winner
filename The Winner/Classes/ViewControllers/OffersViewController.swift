@@ -11,6 +11,7 @@ import UIKit
 class OffersViewController: AbstractController {
     
     @IBOutlet weak var collectionView:UICollectionView!
+    @IBOutlet weak var noResultView: UIView!
     
     var offers:[Offer] = []
     var cellId = "OfferCell"
@@ -48,6 +49,11 @@ class OffersViewController: AbstractController {
             self.showActivityLoader(false)
             if success{
                 self.offers = result
+                if result.count == 0 {
+                    self.noResultView.isHidden = false
+                }else{
+                    self.noResultView.isHidden = true
+                }
                 self.collectionView.reloadData()
             }
             if error != nil{
@@ -67,6 +73,11 @@ class OffersViewController: AbstractController {
             self.showActivityLoader(false)
             if success{
                 self.offers = result
+                if result.count == 0 {
+                    self.noResultView.isHidden = false
+                }else{
+                    self.noResultView.isHidden = true
+                }
                 self.collectionView.reloadData()
             }
             if error != nil{
@@ -100,6 +111,8 @@ extension OffersViewController:UICollectionViewDelegate,UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let title = offers[indexPath.item].description ?? ""
+        self.showMessage(message: title, type: .success)
         
     }
 }

@@ -23,17 +23,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="180" height="173"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gtp-D8-Ust">
-                                <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="75"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sY6-f3-gae">
-                                        <rect key="frame" x="8" y="8" width="34" height="34"/>
+                                        <rect key="frame" x="8" y="12.5" width="50" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="8qi-A6-T7u"/>
-                                            <constraint firstAttribute="width" constant="34" id="l4o-AO-Z4q"/>
+                                            <constraint firstAttribute="height" constant="50" id="8qi-A6-T7u"/>
+                                            <constraint firstAttribute="width" constant="50" id="l4o-AO-Z4q"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="17"/>
+                                                <real key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.0001056488904" green="0.71033031089999998" blue="0.0001638976207" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -44,20 +44,20 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bL-mM-aCi">
-                                        <rect key="frame" x="42" y="25" width="138" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="58" y="37.5" width="122" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="8bL-mM-aCi" secondAttribute="trailing" id="9Xa-0Y-jW9"/>
-                                    <constraint firstItem="sY6-f3-gae" firstAttribute="leading" secondItem="Gtp-D8-Ust" secondAttribute="leading" constant="8" id="Dy3-OQ-1tG"/>
-                                    <constraint firstItem="8bL-mM-aCi" firstAttribute="leading" secondItem="sY6-f3-gae" secondAttribute="trailing" id="UoS-UQ-pCI"/>
+                                    <constraint firstAttribute="right" secondItem="8bL-mM-aCi" secondAttribute="right" id="9Xa-0Y-jW9"/>
+                                    <constraint firstItem="sY6-f3-gae" firstAttribute="left" secondItem="Gtp-D8-Ust" secondAttribute="left" constant="8" id="Dy3-OQ-1tG"/>
+                                    <constraint firstItem="8bL-mM-aCi" firstAttribute="left" secondItem="sY6-f3-gae" secondAttribute="right" id="UoS-UQ-pCI"/>
                                     <constraint firstItem="8bL-mM-aCi" firstAttribute="centerY" secondItem="Gtp-D8-Ust" secondAttribute="centerY" id="b7I-sY-uIU"/>
                                     <constraint firstItem="sY6-f3-gae" firstAttribute="centerY" secondItem="Gtp-D8-Ust" secondAttribute="centerY" id="h1N-fL-hoM"/>
-                                    <constraint firstAttribute="height" constant="50" id="sfB-gQ-Sle"/>
+                                    <constraint firstAttribute="height" constant="75" id="sfB-gQ-Sle"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -69,18 +69,18 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3cj-U8-1YM">
-                                <rect key="frame" x="0.0" y="50" width="180" height="123"/>
+                                <rect key="frame" x="0.0" y="75" width="180" height="98"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="3cj-U8-1YM" secondAttribute="bottom" id="0be-ZJ-iRv"/>
                             <constraint firstItem="Gtp-D8-Ust" firstAttribute="top" secondItem="cnW-NE-07I" secondAttribute="top" id="2NV-Rl-Tqm"/>
-                            <constraint firstItem="Gtp-D8-Ust" firstAttribute="leading" secondItem="cnW-NE-07I" secondAttribute="leading" id="J0S-jC-mQ3"/>
+                            <constraint firstItem="Gtp-D8-Ust" firstAttribute="left" secondItem="cnW-NE-07I" secondAttribute="left" id="J0S-jC-mQ3"/>
                             <constraint firstItem="3cj-U8-1YM" firstAttribute="top" secondItem="Gtp-D8-Ust" secondAttribute="bottom" id="K7M-Ee-oQd"/>
-                            <constraint firstAttribute="trailing" secondItem="Gtp-D8-Ust" secondAttribute="trailing" id="pI6-BY-SRq"/>
-                            <constraint firstItem="3cj-U8-1YM" firstAttribute="leading" secondItem="cnW-NE-07I" secondAttribute="leading" id="qDS-3h-wER"/>
-                            <constraint firstAttribute="trailing" secondItem="3cj-U8-1YM" secondAttribute="trailing" id="zoB-Av-nXP"/>
+                            <constraint firstAttribute="right" secondItem="Gtp-D8-Ust" secondAttribute="right" id="pI6-BY-SRq"/>
+                            <constraint firstItem="3cj-U8-1YM" firstAttribute="left" secondItem="cnW-NE-07I" secondAttribute="left" id="qDS-3h-wER"/>
+                            <constraint firstAttribute="right" secondItem="3cj-U8-1YM" secondAttribute="right" id="zoB-Av-nXP"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -98,8 +98,8 @@
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="cnW-NE-07I" secondAttribute="bottom" id="8On-wN-GO1"/>
-                <constraint firstItem="cnW-NE-07I" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iqh-pM-iwf"/>
-                <constraint firstAttribute="trailing" secondItem="cnW-NE-07I" secondAttribute="trailing" id="nTu-m6-txy"/>
+                <constraint firstItem="cnW-NE-07I" firstAttribute="left" secondItem="gTV-IL-0wX" secondAttribute="left" id="iqh-pM-iwf"/>
+                <constraint firstAttribute="right" secondItem="cnW-NE-07I" secondAttribute="right" id="nTu-m6-txy"/>
                 <constraint firstItem="cnW-NE-07I" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tSU-uV-eLR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

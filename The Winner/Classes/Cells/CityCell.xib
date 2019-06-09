@@ -30,13 +30,18 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="-1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="y5r-H9-v1H" secondAttribute="trailing" id="BOf-3w-VmL"/>
+                                    <constraint firstAttribute="right" secondItem="y5r-H9-v1H" secondAttribute="right" id="BOf-3w-VmL"/>
                                     <constraint firstAttribute="height" constant="30" id="N7i-Sg-sow"/>
-                                    <constraint firstItem="y5r-H9-v1H" firstAttribute="leading" secondItem="k2f-wc-tLF" secondAttribute="leading" id="gur-jH-GoV"/>
+                                    <constraint firstItem="y5r-H9-v1H" firstAttribute="left" secondItem="k2f-wc-tLF" secondAttribute="left" id="gur-jH-GoV"/>
                                     <constraint firstAttribute="bottom" secondItem="y5r-H9-v1H" secondAttribute="bottom" id="iQl-cB-SLQ"/>
                                     <constraint firstItem="y5r-H9-v1H" firstAttribute="top" secondItem="k2f-wc-tLF" secondAttribute="top" id="xdl-S7-RWB"/>
                                 </constraints>
@@ -49,11 +54,11 @@
                         <constraints>
                             <constraint firstItem="eYk-2b-b3l" firstAttribute="top" secondItem="TqM-Dm-T8z" secondAttribute="top" id="0Ei-ou-GF7"/>
                             <constraint firstAttribute="bottom" secondItem="k2f-wc-tLF" secondAttribute="bottom" id="9hY-9e-r8z"/>
-                            <constraint firstAttribute="trailing" secondItem="k2f-wc-tLF" secondAttribute="trailing" id="Gmu-zR-u5t"/>
-                            <constraint firstItem="k2f-wc-tLF" firstAttribute="leading" secondItem="TqM-Dm-T8z" secondAttribute="leading" id="TTs-lM-61u"/>
+                            <constraint firstAttribute="right" secondItem="k2f-wc-tLF" secondAttribute="right" id="Gmu-zR-u5t"/>
+                            <constraint firstItem="k2f-wc-tLF" firstAttribute="left" secondItem="TqM-Dm-T8z" secondAttribute="left" id="TTs-lM-61u"/>
                             <constraint firstItem="k2f-wc-tLF" firstAttribute="top" secondItem="eYk-2b-b3l" secondAttribute="bottom" id="nxh-Yb-owk"/>
-                            <constraint firstItem="eYk-2b-b3l" firstAttribute="leading" secondItem="TqM-Dm-T8z" secondAttribute="leading" id="ub4-AO-3Qh"/>
-                            <constraint firstAttribute="trailing" secondItem="eYk-2b-b3l" secondAttribute="trailing" id="vUk-0D-f8m"/>
+                            <constraint firstItem="eYk-2b-b3l" firstAttribute="left" secondItem="TqM-Dm-T8z" secondAttribute="left" id="ub4-AO-3Qh"/>
+                            <constraint firstAttribute="right" secondItem="eYk-2b-b3l" secondAttribute="right" id="vUk-0D-f8m"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -70,9 +75,9 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="TqM-Dm-T8z" secondAttribute="trailing" id="0y9-Hk-hea"/>
+                <constraint firstAttribute="right" secondItem="TqM-Dm-T8z" secondAttribute="right" id="0y9-Hk-hea"/>
                 <constraint firstItem="TqM-Dm-T8z" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9Ph-um-u1T"/>
-                <constraint firstItem="TqM-Dm-T8z" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="k9m-mb-skS"/>
+                <constraint firstItem="TqM-Dm-T8z" firstAttribute="left" secondItem="gTV-IL-0wX" secondAttribute="left" id="k9m-mb-skS"/>
                 <constraint firstAttribute="bottom" secondItem="TqM-Dm-T8z" secondAttribute="bottom" id="xVG-KG-A04"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

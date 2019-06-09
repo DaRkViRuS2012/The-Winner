@@ -11,6 +11,7 @@ import UIKit
 class RegionsViewController: AbstractController {
 
     @IBOutlet weak var collectionView:UICollectionView!
+    @IBOutlet weak var noResultView: UIView!
     
     var regions:[City] = []
     var cellId = "RegionCell"
@@ -41,6 +42,11 @@ class RegionsViewController: AbstractController {
             self.showActivityLoader(false)
             if success{
                 self.regions = result
+                if result.count == 0 {
+                    self.noResultView.isHidden = false
+                }else{
+                    self.noResultView.isHidden = true
+                }
                 self.collectionView.reloadData()
             }
             if error != nil{

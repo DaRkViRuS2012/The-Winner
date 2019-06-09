@@ -87,6 +87,7 @@
 		147E1F0F2299DCB0008501B2 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147E1F0D2299DCAF008501B2 /* RestaurantCell.xib */; };
 		14DAEDA922ABEB3F007F8C2D /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAEDA722ABEB3F007F8C2D /* OfferCell.swift */; };
 		14DAEDAA22ABEB3F007F8C2D /* OfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DAEDA822ABEB3F007F8C2D /* OfferCell.xib */; };
+		14F9C32422AC7C3F004C0A62 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9C32322AC7C3F004C0A62 /* AboutViewController.swift */; };
 		9A3D495AC5E9CCB917BD6A56 /* Pods_The_Winner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E78D04C0E27E81AF00B90226 /* Pods_The_Winner.framework */; };
 /* End PBXBuildFile section */
 
@@ -178,6 +179,7 @@
 		147E1F0D2299DCAF008501B2 /* RestaurantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
 		14DAEDA722ABEB3F007F8C2D /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
 		14DAEDA822ABEB3F007F8C2D /* OfferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferCell.xib; sourceTree = "<group>"; };
+		14F9C32322AC7C3F004C0A62 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		6D1E7D8E69EBBA90902D8410 /* Pods-The Winner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Winner.release.xcconfig"; path = "Pods/Target Support Files/Pods-The Winner/Pods-The Winner.release.xcconfig"; sourceTree = "<group>"; };
 		803F72CBBB0CC7A64434E6EF /* Pods-The Winner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Winner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The Winner/Pods-The Winner.debug.xcconfig"; sourceTree = "<group>"; };
 		E78D04C0E27E81AF00B90226 /* Pods_The_Winner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Winner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -405,6 +407,7 @@
 				147E1EF72299C66D008501B2 /* RegionsViewController.swift */,
 				147E1EF92299C67F008501B2 /* RestaurantsViewController.swift */,
 				147E1EFB2299C746008501B2 /* OffersViewController.swift */,
+				14F9C32322AC7C3F004C0A62 /* AboutViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				147E1E9F2299C4FF008501B2 /* GCD.m in Sources */,
 				147E1EF82299C66D008501B2 /* RegionsViewController.swift in Sources */,
 				147E1EA42299C4FF008501B2 /* NSlayoutConstraint.swift in Sources */,
+				14F9C32422AC7C3F004C0A62 /* AboutViewController.swift in Sources */,
 				147E1EA62299C4FF008501B2 /* GradiantView.swift in Sources */,
 				147E1EBF2299C4FF008501B2 /* UIImage+Gif.swift in Sources */,
 				147E1EA72299C4FF008501B2 /* PinterestLayout.swift in Sources */,

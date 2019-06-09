@@ -290,7 +290,7 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
     
     
     @objc func aboutButtonAction(_ sender:AnyObject){
-        
+        ActionShowAboutUs.execute()
     }
     
     @objc  func backButtonAction(_ sender: AnyObject) {
@@ -308,6 +308,15 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
     // MARK: Show toast message
     /// Show toast message with key and type
     func showMessage(message: String, type: MessageType) {
+        
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "حسنا", style: .default, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+        return
+        
+        
         // toast view measurments
         let toastOffset = CGFloat(48)
         let toastHeight = CGFloat(104)
@@ -336,24 +345,37 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
         // present the toast with custom view
         self.view.showToast(toastView, duration: 2.0, position: .center, completion: nil)
     }
-    
+    var actInd: UIActivityIndicatorView = UIActivityIndicatorView()
     /// Show/Hide activity loader
     func showActivityLoader(_ show: Bool) {
         if (show) {
-            // create a new style
-            var style = ToastStyle()
-            style.backgroundColor = UIColor.init(white: 255, alpha: 0.1)
-            style.activitySize = CGSize.init(width: 100, height: 100)
-            style.activityIndicatorColor = AppColors.primary
             
-            ToastManager.shared.style = style
-            // present the toast with the new style
-            self.view.makeToastActivity(.center)
+            actInd.frame = CGRect(x:0.0,y: 0.0,width: 40.0,height: 40.0);
+            actInd.center = self.view.center
+            actInd.hidesWhenStopped = true
+            actInd.activityIndicatorViewStyle =
+            UIActivityIndicatorViewStyle.whiteLarge
+            actInd.color = AppColors.primary
+            self.view.addSubview(actInd)
+            actInd.startAnimating()
+            // create a new style
+//            var style = ToastStyle()
+//            style.backgroundColor = UIColor.clear
+//            style.activitySize = CGSize.init(width: 100, height: 100)
+//            style.activityIndicatorColor = AppColors.primary
+//
+//            ToastManager.shared.style = style
+//            // present the toast with the new style
+//            self.view.makeToastActivity(.center)
             // disable user interaction
             self.view.isUserInteractionEnabled = false
         } else {
             // hide activity loader
-            self.view.hideToastActivity()
+//            self.view.hideToastActivity()
+            if actInd.isAnimating{
+                actInd.stopAnimating()
+            }
+            
             // enable user interaction
             self.view.isUserInteractionEnabled = true
         }
@@ -389,6 +411,15 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
     
     @IBAction func unwindToRoot(segue: UIStoryboardSegue){
         print("unwind!!")
+    }
+    
+    func openURL(url:String){
+        if let nsURL = URL(string:url){
+        if UIApplication.shared.canOpenURL(nsURL){
+            UIApplication.shared.openURL(nsURL)
+            
+            }
+        }
     }
     
     func callPhone(phone:String){

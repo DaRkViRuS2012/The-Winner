@@ -35,17 +35,17 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="wTE-Gd-KFc" secondAttribute="bottom" id="HFz-al-7Dh"/>
-                                    <constraint firstAttribute="trailing" secondItem="wTE-Gd-KFc" secondAttribute="trailing" id="SwN-y1-dhv"/>
+                                    <constraint firstAttribute="right" secondItem="wTE-Gd-KFc" secondAttribute="right" id="SwN-y1-dhv"/>
                                     <constraint firstItem="wTE-Gd-KFc" firstAttribute="top" secondItem="rz4-TG-Mel" secondAttribute="top" id="b95-Wd-SKd"/>
-                                    <constraint firstItem="wTE-Gd-KFc" firstAttribute="leading" secondItem="rz4-TG-Mel" secondAttribute="leading" id="c8S-Oq-MvD"/>
+                                    <constraint firstItem="wTE-Gd-KFc" firstAttribute="left" secondItem="rz4-TG-Mel" secondAttribute="left" id="c8S-Oq-MvD"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rz4-TG-Mel" firstAttribute="top" secondItem="VoD-cK-NXA" secondAttribute="top" id="Xto-vr-o6u"/>
-                            <constraint firstItem="rz4-TG-Mel" firstAttribute="leading" secondItem="VoD-cK-NXA" secondAttribute="leading" id="f7v-7b-0KU"/>
-                            <constraint firstAttribute="trailing" secondItem="rz4-TG-Mel" secondAttribute="trailing" id="tuD-qS-hBj"/>
+                            <constraint firstItem="rz4-TG-Mel" firstAttribute="left" secondItem="VoD-cK-NXA" secondAttribute="left" id="f7v-7b-0KU"/>
+                            <constraint firstAttribute="right" secondItem="rz4-TG-Mel" secondAttribute="right" id="tuD-qS-hBj"/>
                             <constraint firstAttribute="bottom" secondItem="rz4-TG-Mel" secondAttribute="bottom" id="wak-Oz-Eme"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
