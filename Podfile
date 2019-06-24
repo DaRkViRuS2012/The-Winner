@@ -8,6 +8,7 @@ target 'The Winner' do
 	pod 'SwiftyJSON'
 	pod 'Toast-Swift'
 	pod 'SDWebImage/WebP'
+    pod 'IQKeyboardManagerSwift'
   # Pods for The Winner
 
 end

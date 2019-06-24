@@ -1,0 +1,162 @@
+
+/* Class = "UILabel"; text = "يرجى الاختيار"; ObjectID = "0gy-0A-qmV"; */
+"0gy-0A-qmV.text" = "يرجى الاختيار";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الاول"; ObjectID = "3og-Mk-jUg"; */
+"3og-Mk-jUg.placeholder" = "اسم اللاعب الاول";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "4Yu-Oh-EzF"; */
+"4Yu-Oh-EzF.text" = "0";
+
+/* Class = "UILabel"; text = "تركس عادي"; ObjectID = "5RA-2D-cI1"; */
+"5RA-2D-cI1.text" = "تركس عادي";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الرابع"; ObjectID = "6QW-Ng-e8v"; */
+"6QW-Ng-e8v.placeholder" = "اسم اللاعب الرابع";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الاول"; ObjectID = "7TT-p2-UTO"; */
+"7TT-p2-UTO.placeholder" = "اسم اللاعب الاول";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الثالث"; ObjectID = "8th-IE-0HU"; */
+"8th-IE-0HU.placeholder" = "اسم اللاعب الثالث";
+
+/* Class = "UILabel"; text = "يرجى الاختيار"; ObjectID = "AXx-v1-26V"; */
+"AXx-v1-26V.text" = "يرجى الاختيار";
+
+/* Class = "UILabel"; text = "كونكان"; ObjectID = "Bz4-6b-G6g"; */
+"Bz4-6b-G6g.text" = "كونكان";
+
+/* Class = "UILabel"; text = "لمحة عن التطبيق"; ObjectID = "CkK-bX-NFF"; */
+"CkK-bX-NFF.text" = "لمحة عن التطبيق";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "DOO-qA-NCR"; */
+"DOO-qA-NCR.text" = "0";
+
+/* Class = "UILabel"; text = "يرجى الاختيار"; ObjectID = "DRU-o5-uZj"; */
+"DRU-o5-uZj.text" = "يرجى الاختيار";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الثالث"; ObjectID = "Dvf-9Y-jB3"; */
+"Dvf-9Y-jB3.placeholder" = "اسم اللاعب الثالث";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الثاني"; ObjectID = "FkT-CL-5ja"; */
+"FkT-CL-5ja.placeholder" = "اسم اللاعب الثاني";
+
+/* Class = "UILabel"; text = "تركس كومبليكس"; ObjectID = "Fom-Wp-4qr"; */
+"Fom-Wp-4qr.text" = "تركس كومبليكس";
+
+/* Class = "UILabel"; text = "طرنيب 41"; ObjectID = "GQe-qd-5tq"; */
+"GQe-qd-5tq.text" = "طرنيب 41";
+
+/* Class = "UILabel"; text = "أول تطبيق مجاني بساعدك بتسجيل نتائج لعبة الشدة بأسرع وأسهل طريقة وبلا ما تضيع وقتك بالآلة الحاسبة والورقة والقلم. وفوقها، رح تتعرف عكل المطاعم الي بتخليك تلعب شدة مع رفقاتك مع عروض مقدمة حصراً من التطبيق. نقي المنطقة الي حابب تروح عليها والتطبيق بيخترلك أحسن المطاعم الي بتسمح بلعبة الشدة."; ObjectID = "INL-ru-NOl"; */
+"INL-ru-NOl.text" = "أول تطبيق مجاني بساعدك بتسجيل نتائج لعبة الشدة بأسرع وأسهل طريقة وبلا ما تضيع وقتك بالآلة الحاسبة والورقة والقلم. وفوقها، رح تتعرف عكل المطاعم الي بتخليك تلعب شدة مع رفقاتك مع عروض مقدمة حصراً من التطبيق. نقي المنطقة الي حابب تروح عليها والتطبيق بيخترلك أحسن المطاعم الي بتسمح بلعبة الشدة.";
+
+/* Class = "UILabel"; text = "الرابح"; ObjectID = "JIn-xE-J0q"; */
+"JIn-xE-J0q.text" = "الرابح";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الاول"; ObjectID = "Nkj-jU-3TV"; */
+"Nkj-jU-3TV.placeholder" = "اسم اللاعب الاول";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الاول"; ObjectID = "SsK-gT-sWN"; */
+"SsK-gT-sWN.placeholder" = "اسم اللاعب الاول";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الثالث"; ObjectID = "T8i-Ry-Vs0"; */
+"T8i-Ry-Vs0.placeholder" = "اسم اللاعب الثالث";
+
+/* Class = "UITabBarItem"; title = "المطاعم"; ObjectID = "UP7-dk-BAV"; */
+"UP7-dk-BAV.title" = "المطاعم";
+
+/* Class = "UILabel"; text = "لم يتم اضافة مناطق بعد"; ObjectID = "X42-4x-jPg"; */
+"X42-4x-jPg.text" = "لم يتم اضافة مناطق بعد";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الثالث"; ObjectID = "XZb-HD-NEB"; */
+"XZb-HD-NEB.placeholder" = "اسم اللاعب الثالث";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الاول"; ObjectID = "YRZ-pj-F4w"; */
+"YRZ-pj-F4w.placeholder" = "اسم اللاعب الاول";
+
+/* Class = "UILabel"; text = "يرجى الاختيار"; ObjectID = "Zd2-o4-Fe1"; */
+"Zd2-o4-Fe1.text" = "يرجى الاختيار";
+
+/* Class = "UITabBarItem"; title = "الالعاب"; ObjectID = "a31-QJ-Evb"; */
+"a31-QJ-Evb.title" = "الالعاب";
+
+/* Class = "UILabel"; text = "يرجى الاختيار"; ObjectID = "bRX-8x-kpl"; */
+"bRX-8x-kpl.text" = "يرجى الاختيار";
+
+/* Class = "UIButton"; normalTitle = "متابعة"; ObjectID = "bcW-fc-LR0"; */
+"bcW-fc-LR0.normalTitle" = "متابعة";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الرابع"; ObjectID = "c6v-xM-CFn"; */
+"c6v-xM-CFn.placeholder" = "اسم اللاعب الرابع";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الرابع"; ObjectID = "dZR-7Y-g9f"; */
+"dZR-7Y-g9f.placeholder" = "اسم اللاعب الرابع";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "fZT-ad-3ED"; */
+"fZT-ad-3ED.text" = "0";
+
+/* Class = "UILabel"; text = "طرنيب 61"; ObjectID = "g4p-Hs-z3Q"; */
+"g4p-Hs-z3Q.text" = "طرنيب 61";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الثاني"; ObjectID = "glL-iq-S3p"; */
+"glL-iq-S3p.placeholder" = "اسم اللاعب الثاني";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الثالث"; ObjectID = "jBi-og-JHF"; */
+"jBi-og-JHF.placeholder" = "اسم اللاعب الثالث";
+
+/* Class = "UILabel"; text = "لم يتم اضافة مطاعم بعد"; ObjectID = "jvd-cI-ptY"; */
+"jvd-cI-ptY.text" = "لم يتم اضافة مطاعم بعد";
+
+/* Class = "UIButton"; normalTitle = "متابعة"; ObjectID = "m8w-Fr-QQQ"; */
+"m8w-Fr-QQQ.normalTitle" = "متابعة";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الثاني"; ObjectID = "mOa-3e-SYL"; */
+"mOa-3e-SYL.placeholder" = "اسم اللاعب الثاني";
+
+/* Class = "UIButton"; normalTitle = "متابعة"; ObjectID = "n0X-uB-F1R"; */
+"n0X-uB-F1R.normalTitle" = "متابعة";
+
+/* Class = "UILabel"; text = "لم يتم اضافة مدن بعد"; ObjectID = "nfS-pB-JoL"; */
+"nfS-pB-JoL.text" = "لم يتم اضافة مدن بعد";
+
+/* Class = "UILabel"; text = "لم يتم اضافة عروض بعد"; ObjectID = "oEy-4g-mBs"; */
+"oEy-4g-mBs.text" = "لم يتم اضافة عروض بعد";
+
+/* Class = "UIButton"; normalTitle = "متابعة"; ObjectID = "oOf-1J-1BX"; */
+"oOf-1J-1BX.normalTitle" = "متابعة";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "qds-YA-aMC"; */
+"qds-YA-aMC.text" = "0";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الثاني"; ObjectID = "r2Z-D4-z26"; */
+"r2Z-D4-z26.placeholder" = "اسم اللاعب الثاني";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الرابع"; ObjectID = "s3b-fC-jtN"; */
+"s3b-fC-jtN.placeholder" = "اسم اللاعب الرابع";
+
+/* Class = "UIButton"; normalTitle = "متابعة"; ObjectID = "sMj-H6-4yF"; */
+"sMj-H6-4yF.normalTitle" = "متابعة";
+
+/* Class = "UILabel"; text = "يرجى الاختيار"; ObjectID = "t7s-Uv-IZO"; */
+"t7s-Uv-IZO.text" = "يرجى الاختيار";
+
+/* Class = "UILabel"; text = "تواصل معنا عبر"; ObjectID = "tzH-dN-jRd"; */
+"tzH-dN-jRd.text" = "تواصل معنا عبر";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الثاني"; ObjectID = "uHz-Cq-NL9"; */
+"uHz-Cq-NL9.placeholder" = "اسم اللاعب الثاني";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الرابع"; ObjectID = "vMl-Ro-MfM"; */
+"vMl-Ro-MfM.placeholder" = "اسم اللاعب الرابع";
+
+/* Class = "UIButton"; normalTitle = "متابعة"; ObjectID = "wgO-wJ-EOV"; */
+"wgO-wJ-EOV.normalTitle" = "متابعة";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الثاني"; ObjectID = "xPh-Ig-6Bx"; */
+"xPh-Ig-6Bx.placeholder" = "اسم اللاعب الثاني";
+
+/* Class = "UILabel"; text = "ليخا"; ObjectID = "yZM-y2-ZMo"; */
+"yZM-y2-ZMo.text" = "ليخا";
+
+/* Class = "UITextField"; placeholder = "اسم اللاعب الاول"; ObjectID = "zvM-qN-auf"; */
+"zvM-qN-auf.placeholder" = "اسم اللاعب الاول";

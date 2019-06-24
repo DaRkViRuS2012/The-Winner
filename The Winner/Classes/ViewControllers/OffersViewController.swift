@@ -26,7 +26,7 @@ class OffersViewController: AbstractController {
         let nib = UINib(nibName: cellId, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellId)
         self.showNavBackButton = true
-        self.showNavAboutAndOffersButton = true
+//        self.showNavAboutAndOffersButton = true
         if let id = res_id{
             getOffers(id)
         }else{

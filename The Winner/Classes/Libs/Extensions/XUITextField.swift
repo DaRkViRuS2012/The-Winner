@@ -15,8 +15,6 @@ import UIKit
 @IBDesignable
 class XUITextField:UITextField{
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         

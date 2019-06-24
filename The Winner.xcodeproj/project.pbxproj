@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141789A422B75E0B00601A0F /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141789A322B75E0B00601A0F /* GamesViewController.swift */; };
+		141789A622B788E700601A0F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141789A522B788E700601A0F /* Game.swift */; };
 		147E1DC42299C1F5008501B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147E1DC32299C1F5008501B2 /* AppDelegate.swift */; };
 		147E1DC62299C1F5008501B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147E1DC52299C1F5008501B2 /* ViewController.swift */; };
 		147E1DC92299C1F5008501B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147E1DC72299C1F5008501B2 /* Main.storyboard */; };
@@ -85,13 +87,22 @@
 		147E1F0B2299D8D7008501B2 /* RegionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147E1F092299D8D7008501B2 /* RegionCell.xib */; };
 		147E1F0E2299DCB0008501B2 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147E1F0C2299DCAF008501B2 /* RestaurantCell.swift */; };
 		147E1F0F2299DCB0008501B2 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147E1F0D2299DCAF008501B2 /* RestaurantCell.xib */; };
+		14A9591C22B901FE006BB3E9 /* TarneebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A9591B22B901FE006BB3E9 /* TarneebViewViewController.swift */; };
+		14A9592122B903B8006BB3E9 /* Tarneeb41Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A9591F22B903B8006BB3E9 /* Tarneeb41Cell.swift */; };
+		14A9592222B903B8006BB3E9 /* Tarneeb41Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A9592022B903B8006BB3E9 /* Tarneeb41Cell.xib */; };
 		14DAEDA922ABEB3F007F8C2D /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAEDA722ABEB3F007F8C2D /* OfferCell.swift */; };
 		14DAEDAA22ABEB3F007F8C2D /* OfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DAEDA822ABEB3F007F8C2D /* OfferCell.xib */; };
+		14E7590922C0F9D800853864 /* LekhaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E7590722C0F9D800853864 /* LekhaCell.swift */; };
+		14E7590A22C0F9D800853864 /* LekhaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E7590822C0F9D800853864 /* LekhaCell.xib */; };
+		14E7590C22C0FAE400853864 /* LekhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E7590B22C0FAE400853864 /* LekhaViewController.swift */; };
+		14E7590E22C0FFE000853864 /* ConcanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E7590D22C0FFE000853864 /* ConcanViewController.swift */; };
 		14F9C32422AC7C3F004C0A62 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9C32322AC7C3F004C0A62 /* AboutViewController.swift */; };
 		9A3D495AC5E9CCB917BD6A56 /* Pods_The_Winner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E78D04C0E27E81AF00B90226 /* Pods_The_Winner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		141789A322B75E0B00601A0F /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
+		141789A522B788E700601A0F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		147E1DC02299C1F5008501B2 /* The Winner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Winner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		147E1DC32299C1F5008501B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		147E1DC52299C1F5008501B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -177,8 +188,15 @@
 		147E1F092299D8D7008501B2 /* RegionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegionCell.xib; sourceTree = "<group>"; };
 		147E1F0C2299DCAF008501B2 /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		147E1F0D2299DCAF008501B2 /* RestaurantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
+		14A9591B22B901FE006BB3E9 /* TarneebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarneebViewViewController.swift; sourceTree = "<group>"; };
+		14A9591F22B903B8006BB3E9 /* Tarneeb41Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tarneeb41Cell.swift; path = ../Tarneeb41Cell.swift; sourceTree = "<group>"; };
+		14A9592022B903B8006BB3E9 /* Tarneeb41Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Tarneeb41Cell.xib; path = ../Tarneeb41Cell.xib; sourceTree = "<group>"; };
 		14DAEDA722ABEB3F007F8C2D /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
 		14DAEDA822ABEB3F007F8C2D /* OfferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferCell.xib; sourceTree = "<group>"; };
+		14E7590722C0F9D800853864 /* LekhaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LekhaCell.swift; sourceTree = "<group>"; };
+		14E7590822C0F9D800853864 /* LekhaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LekhaCell.xib; sourceTree = "<group>"; };
+		14E7590B22C0FAE400853864 /* LekhaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LekhaViewController.swift; sourceTree = "<group>"; };
+		14E7590D22C0FFE000853864 /* ConcanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcanViewController.swift; sourceTree = "<group>"; };
 		14F9C32322AC7C3F004C0A62 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		6D1E7D8E69EBBA90902D8410 /* Pods-The Winner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Winner.release.xcconfig"; path = "Pods/Target Support Files/Pods-The Winner/Pods-The Winner.release.xcconfig"; sourceTree = "<group>"; };
 		803F72CBBB0CC7A64434E6EF /* Pods-The Winner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Winner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The Winner/Pods-The Winner.debug.xcconfig"; sourceTree = "<group>"; };
@@ -280,6 +298,7 @@
 				147E1E0C2299C4FE008501B2 /* Models */,
 				147E1E1D2299C4FE008501B2 /* Libs */,
 				147E1E4A2299C4FF008501B2 /* ViewControllers */,
+				141789A522B788E700601A0F /* Game.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -408,6 +427,10 @@
 				147E1EF92299C67F008501B2 /* RestaurantsViewController.swift */,
 				147E1EFB2299C746008501B2 /* OffersViewController.swift */,
 				14F9C32322AC7C3F004C0A62 /* AboutViewController.swift */,
+				141789A322B75E0B00601A0F /* GamesViewController.swift */,
+				14A9591B22B901FE006BB3E9 /* TarneebViewViewController.swift */,
+				14E7590B22C0FAE400853864 /* LekhaViewController.swift */,
+				14E7590D22C0FFE000853864 /* ConcanViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -415,6 +438,8 @@
 		147E1F012299D1E4008501B2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				14A9591F22B903B8006BB3E9 /* Tarneeb41Cell.swift */,
+				14A9592022B903B8006BB3E9 /* Tarneeb41Cell.xib */,
 				147E1F022299D2F3008501B2 /* CityCell.swift */,
 				147E1F032299D2F3008501B2 /* CityCell.xib */,
 				147E1F082299D8D7008501B2 /* RegionCell.swift */,
@@ -423,6 +448,8 @@
 				147E1F0D2299DCAF008501B2 /* RestaurantCell.xib */,
 				14DAEDA722ABEB3F007F8C2D /* OfferCell.swift */,
 				14DAEDA822ABEB3F007F8C2D /* OfferCell.xib */,
+				14E7590722C0F9D800853864 /* LekhaCell.swift */,
+				14E7590822C0F9D800853864 /* LekhaCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -512,6 +539,7 @@
 				147E1DCE2299C1FA008501B2 /* LaunchScreen.storyboard in Resources */,
 				147E1F052299D2F3008501B2 /* CityCell.xib in Resources */,
 				147E1DF12299C4CD008501B2 /* Cairo-Regular.ttf in Resources */,
+				14A9592222B903B8006BB3E9 /* Tarneeb41Cell.xib in Resources */,
 				147E1DF02299C4CD008501B2 /* Cairo-ExtraLight.ttf in Resources */,
 				147E1DF62299C4CD008501B2 /* Antipasto_extrabold.otf in Resources */,
 				147E1DF22299C4CD008501B2 /* Cairo-Light.ttf in Resources */,
@@ -522,6 +550,7 @@
 				147E1DF52299C4CD008501B2 /* Antipasto_regular.otf in Resources */,
 				147E1F0F2299DCB0008501B2 /* RestaurantCell.xib in Resources */,
 				147E1EF42299C52B008501B2 /* Assets.xcassets in Resources */,
+				14E7590A22C0F9D800853864 /* LekhaCell.xib in Resources */,
 				147E1DEC2299C4CD008501B2 /* MullerBold.otf in Resources */,
 				147E1DF92299C4CD008501B2 /* OpenSansBold.ttf in Resources */,
 				147E1EBC2299C4FF008501B2 /* CountryPicker.bundle in Resources */,
@@ -543,6 +572,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-The Winner/Pods-The Winner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
@@ -553,6 +583,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
@@ -593,6 +624,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				147E1EAB2299C4FF008501B2 /* UIImageViewWithMask.swift in Sources */,
+				14E7590922C0F9D800853864 /* LekhaCell.swift in Sources */,
 				147E1EB12299C4FF008501B2 /* UIImage.swift in Sources */,
 				147E1EAE2299C4FF008501B2 /* UITabBarItem.swift in Sources */,
 				147E1EB72299C4FF008501B2 /* CAShapeLayer.swift in Sources */,
@@ -608,20 +640,25 @@
 				147E1F0A2299D8D7008501B2 /* RegionCell.swift in Sources */,
 				147E1DFD2299C4E0008501B2 /* FireBaseNotification.swift in Sources */,
 				147E1F042299D2F3008501B2 /* CityCell.swift in Sources */,
+				141789A422B75E0B00601A0F /* GamesViewController.swift in Sources */,
 				147E1DC62299C1F5008501B2 /* ViewController.swift in Sources */,
 				147E1EB32299C4FF008501B2 /* UIImageView.swift in Sources */,
 				147E1E902299C4FF008501B2 /* AppUser.swift in Sources */,
 				147E1F002299CD86008501B2 /* BaseModel.swift in Sources */,
 				147E1EB42299C4FF008501B2 /* UIApplication.swift in Sources */,
 				147E1EFC2299C746008501B2 /* OffersViewController.swift in Sources */,
+				14E7590C22C0FAE400853864 /* LekhaViewController.swift in Sources */,
 				147E1EAA2299C4FF008501B2 /* UIView2.swift in Sources */,
 				147E1E9F2299C4FF008501B2 /* GCD.m in Sources */,
+				14A9591C22B901FE006BB3E9 /* TarneebViewViewController.swift in Sources */,
 				147E1EF82299C66D008501B2 /* RegionsViewController.swift in Sources */,
 				147E1EA42299C4FF008501B2 /* NSlayoutConstraint.swift in Sources */,
 				14F9C32422AC7C3F004C0A62 /* AboutViewController.swift in Sources */,
 				147E1EA62299C4FF008501B2 /* GradiantView.swift in Sources */,
+				14A9592122B903B8006BB3E9 /* Tarneeb41Cell.swift in Sources */,
 				147E1EBF2299C4FF008501B2 /* UIImage+Gif.swift in Sources */,
 				147E1EA72299C4FF008501B2 /* PinterestLayout.swift in Sources */,
+				141789A622B788E700601A0F /* Game.swift in Sources */,
 				147E1E8E2299C4FF008501B2 /* Location.swift in Sources */,
 				147E1EAC2299C4FF008501B2 /* XUITextField.swift in Sources */,
 				147E1EAD2299C4FF008501B2 /* UITextField.swift in Sources */,
@@ -631,6 +668,7 @@
 				147E1EA02299C4FF008501B2 /* XUILabel.swift in Sources */,
 				147E1EBD2299C4FF008501B2 /* DateHelper.swift in Sources */,
 				147E1EAF2299C4FF008501B2 /* String.swift in Sources */,
+				14E7590E22C0FFE000853864 /* ConcanViewController.swift in Sources */,
 				147E1E862299C4FF008501B2 /* AbstractController.swift in Sources */,
 				147E1EB82299C4FF008501B2 /* UICollectionViewCell.swift in Sources */,
 				147E1EBB2299C4FF008501B2 /* CountryPicker.m in Sources */,

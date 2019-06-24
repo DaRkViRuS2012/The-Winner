@@ -41,6 +41,7 @@ class DataStore :NSObject {
     private let CACHE_KEY_POSTS = "posts"
     private let CACHE_KEY_Volume = "volume"
     private let CACHE_KEY_FAVORITE = "favorites"
+    
     //MARK: Temp data holders
     //keep reference to the written value in another private property just to prevent reading from cache each time you use this var
     private var _me:AppUser?
@@ -48,8 +49,8 @@ class DataStore :NSObject {
     private var _cities:[City] = [City]()
     private var _areas:[City] = [City]()
 
+    public var currentGame:Game?
     
- 
 
     
     

@@ -23,7 +23,7 @@ struct AppColors {
     static let blackXLightWithAlpha = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
     static let blackXDarkWithAlpha = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     
-    // pink
+    // green
     static let primary = UIColor(red: 53, green: 125, blue: 29)
     // purple
     static let secondary = UIColor(red: 113, green: 74, blue: 154)

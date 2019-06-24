@@ -22,7 +22,7 @@ class XUIButton:UIButton{
         didSet{
 
             if primary{
-                //self.backgroundColor = AppColors.primaryButton
+                self.backgroundColor = AppColors.primary
                 self.setTitleColor(.white, for: .normal)
             }
         }
