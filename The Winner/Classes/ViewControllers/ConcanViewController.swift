@@ -46,6 +46,11 @@ class ConcanViewController: AbstractController {
             secondPlayerNameLabel.isHidden = false
             thirdPlayerNameLabel.isHidden = false
             forthPlayerNameLabel.isHidden = false
+            firstPlayerResultLabel.isHidden = false
+            secondPlayerResultLabel.isHidden = false
+            thirdPlayerResultLabel.isHidden = false
+            forthPlayerResultLabel.isHidden = false
+            
         }else if DataStore.shared.currentGame?.numberOfPlayers == 3{
             firstPlayerNameLabel.text = DataStore.shared.currentGame?.players[0].name
             secondPlayerNameLabel.text = DataStore.shared.currentGame?.players[1].name
@@ -53,11 +58,20 @@ class ConcanViewController: AbstractController {
             firstPlayerNameLabel.isHidden = false
             secondPlayerNameLabel.isHidden = false
             thirdPlayerNameLabel.isHidden = false
+            
+            firstPlayerResultLabel.isHidden = false
+            secondPlayerResultLabel.isHidden = false
+            thirdPlayerResultLabel.isHidden = false
+            forthPlayerResultLabel.isHidden = true
         }else if DataStore.shared.currentGame?.numberOfPlayers == 2{
             firstPlayerNameLabel.text = DataStore.shared.currentGame?.players[0].name
             secondPlayerNameLabel.text = DataStore.shared.currentGame?.players[1].name
             firstPlayerNameLabel.isHidden = false
             secondPlayerNameLabel.isHidden = false
+            firstPlayerResultLabel.isHidden = false
+            secondPlayerResultLabel.isHidden = false
+            thirdPlayerResultLabel.isHidden = true
+            forthPlayerResultLabel.isHidden = true
         }
    
     }
@@ -66,8 +80,12 @@ class ConcanViewController: AbstractController {
     func setResult(){
         firstPlayerResultLabel.text = "\(DataStore.shared.currentGame?.players[0].getResult() ?? 0)"
         secondPlayerResultLabel.text = "\(DataStore.shared.currentGame?.players[1].getResult() ?? 0)"
-        thirdPlayerResultLabel.text = "\(DataStore.shared.currentGame?.players[2].getResult() ?? 0)"
-        forthPlayerResultLabel.text =  "\(DataStore.shared.currentGame?.players[3].getResult() ?? 0)"
+         if DataStore.shared.currentGame!.numberOfPlayers > 2{
+            thirdPlayerResultLabel.text = "\(DataStore.shared.currentGame?.players[2].getResult() ?? 0)"
+             if DataStore.shared.currentGame!.numberOfPlayers > 3{
+                forthPlayerResultLabel.text =  "\(DataStore.shared.currentGame?.players[3].getResult() ?? 0)"
+            }
+        }
     }
     
     
@@ -112,15 +130,19 @@ extension ConcanViewController:LekhaDelegate{
         
         let lap = Lap()
         lap.players = [Player(name:""),Player(name:""),Player(name:""),Player(name:"")]
-        lap.players[0].result = firstPlayer
-        lap.players[1].result = secondPlayer
-        lap.players[2].result = thirdPlayer
-        lap.players[3].result = forthPlayer
-        self.laps.append(lap)
         DataStore.shared.currentGame?.players[0].setResult(res: firstPlayer)
         DataStore.shared.currentGame?.players[1].setResult(res: secondPlayer)
-        DataStore.shared.currentGame?.players[2].setResult(res: thirdPlayer)
-        DataStore.shared.currentGame?.players[3].setResult(res: forthPlayer)
+        if DataStore.shared.currentGame!.numberOfPlayers > 2{
+            DataStore.shared.currentGame?.players[2].setResult(res: thirdPlayer)
+            lap.players[2].result = thirdPlayer
+            if DataStore.shared.currentGame!.numberOfPlayers > 3{
+                DataStore.shared.currentGame?.players[3].setResult(res: forthPlayer)
+                lap.players[3].result = forthPlayer
+            }
+        }
+        lap.players[0].result = firstPlayer
+        lap.players[1].result = secondPlayer
+        self.laps.append(lap)
         setResult()
         collectionView.reloadData()
     }

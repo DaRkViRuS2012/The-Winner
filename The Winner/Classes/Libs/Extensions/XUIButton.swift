@@ -23,10 +23,21 @@ class XUIButton:UIButton{
 
             if primary{
                 self.backgroundColor = AppColors.primary
+                borderWidth = 1
+                isSelected = false
+                self.makeRounded()
                 self.setTitleColor(.white, for: .normal)
             }
         }
     }
+    override var isSelected: Bool {
+        didSet {
+            layer.borderColor = !isSelected ? UIColor.white.cgColor : AppColors.primary.cgColor
+            self.backgroundColor = !isSelected ? AppColors.primary :  UIColor.white
+        }
+    }
+    
+    
     init(primary:Bool){
         self.primary = primary
         super.init(frame:CGRect.zero)

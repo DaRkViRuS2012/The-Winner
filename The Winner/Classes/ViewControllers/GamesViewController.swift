@@ -119,10 +119,45 @@ class GamesViewController: AbstractController {
         self.view.endEditing(true)
     }
     
-    
-    
+    func validateTarneeb61()->Bool{
+        
+        if let firstPlayer = tarneeb61FirstPlayerTF.text , !firstPlayer.isEmpty{
+            playersNames.append(firstPlayer)
+        }else{
+            self.showMessage(message: "الرجاء ادخال كافة اللاعبين", type: .error)
+            return false
+        }
+        
+        if let firstPlayer = tarneeb61SecondPlayerTF.text , !firstPlayer.isEmpty{
+            playersNames.append(firstPlayer)
+        }else{
+            self.showMessage(message: "الرجاء ادخال كافة اللاعبين", type: .error)
+            return false
+        }
 
+        return true
+    }
+    
+    @IBAction func hideTarneeb61(_ sender: UITapGestureRecognizer) {
+        self.tarneeb61View.isHidden = true
+        self.tarneeb61FirstPlayerTF.text = nil
+        self.tarneeb61SecondPlayerTF.text = nil
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func showTarneeb61View(_ sender: UIButton) {
+        self.tarneeb61View.isHidden = false
+        self.tarneeb61PlayersView.animateIn(mode: .animateInFromBottom, delay: 0.2)
+    }
+    
     @IBAction func handelTarneeb61Game(_ sender: UIButton) {
+        playersNames.removeAll()
+        if validateTarneeb61(){
+            DataStore.shared.currentGame = Game(type: .tarneb61, numberOfPlayers: playersNames.count)
+            DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
+            let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "TarneebViewViewController") as! TarneebViewViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     
@@ -189,39 +224,45 @@ class GamesViewController: AbstractController {
     
     func validateConcan()-> Bool{
         
-        if let firstPlayer = lekhaFirstPlayerTF.text , !firstPlayer.isEmpty{
+        if let firstPlayer = concanFirstPlayerTF.text , !firstPlayer.isEmpty{
             playersNames.append(firstPlayer)
         }else{
             self.showMessage(message: "الرجاء ادخال كافة اللاعبين", type: .error)
             return false
         }
         
-        if let firstPlayer = lekhaSecondPlayerTF.text , !firstPlayer.isEmpty{
+        if let firstPlayer = concanSecondPlayerTF.text , !firstPlayer.isEmpty{
             playersNames.append(firstPlayer)
         }else{
             self.showMessage(message: "الرجاء ادخال كافة اللاعبين", type: .error)
             return false
         }
-        if let firstPlayer = lekhaThirdPlayerTF.text , !firstPlayer.isEmpty{
-            playersNames.append(firstPlayer)
-        }else{
-            self.showMessage(message: "الرجاء ادخال كافة اللاعبين", type: .error)
-            return false
+        if DataStore.shared.currentGame!.numberOfPlayers > 2{
+            if let firstPlayer = concanThirdPlayerTF.text , !firstPlayer.isEmpty{
+                playersNames.append(firstPlayer)
+            }else{
+                self.showMessage(message: "الرجاء ادخال كافة اللاعبين", type: .error)
+                return false
+            }
+            
+            if DataStore.shared.currentGame!.numberOfPlayers > 3{
+                if let firstPlayer = concanForthPlayerTF.text , !firstPlayer.isEmpty{
+                    playersNames.append(firstPlayer)
+                }else{
+                    self.showMessage(message: "الرجاء ادخال كافة اللاعبين", type: .error)
+                    return false
+                }
+            }
         }
-        
-        if let firstPlayer = lekhaForthPlayerTF.text , !firstPlayer.isEmpty{
-            playersNames.append(firstPlayer)
-        }else{
-            self.showMessage(message: "الرجاء ادخال كافة اللاعبين", type: .error)
-            return false
-        }
-        
         return true
     }
     
     @IBAction func showConcanView(_ sender: UIButton) {
         self.concanView.isHidden = false
+        self.concanPlayersView.isHidden = true
+        self.concanNumberOfPlayerView.isHidden = false
         self.concanNumberOfPlayerView.animateIn(mode: .animateInFromBottom, delay: 0.2)
+        
     }
     
     @IBAction func hideConcan(_ sender: UITapGestureRecognizer) {
@@ -236,11 +277,17 @@ class GamesViewController: AbstractController {
     
     @IBAction func setConcanNumberOfPlayer(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            DataStore.shared.currentGame = Game(type: .lekha, numberOfPlayers: 4)
+            DataStore.shared.currentGame = Game(type: .concan, numberOfPlayers: 4)
+            self.concanThirdPlayerTF.isHidden = false
+            self.concanForthPlayerTF.isHidden = false
         }else if sender.selectedSegmentIndex == 1{
-                DataStore.shared.currentGame = Game(type: .lekha, numberOfPlayers: 3)
+                DataStore.shared.currentGame = Game(type: .concan, numberOfPlayers: 3)
+                self.concanThirdPlayerTF.isHidden = false
+                self.concanForthPlayerTF.isHidden = true
         }else if sender.selectedSegmentIndex == 2{
-                DataStore.shared.currentGame = Game(type: .lekha, numberOfPlayers: 2)
+                DataStore.shared.currentGame = Game(type: .concan, numberOfPlayers: 2)
+                self.concanThirdPlayerTF.isHidden = true
+                self.concanForthPlayerTF.isHidden = true
         }
     }
     
@@ -256,10 +303,10 @@ class GamesViewController: AbstractController {
     
     @IBAction func handelConcanGame(_ sender: UIButton) {
         playersNames.removeAll()
-        if validateLekha(){
-            DataStore.shared.currentGame = Game(type: .lekha, numberOfPlayers: playersNames.count)
+        if validateConcan(){
+            DataStore.shared.currentGame = Game(type: .concan, numberOfPlayers: playersNames.count)
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
-            let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "LekhaViewController") as! LekhaViewController
+            let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "ConcanViewController") as! ConcanViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

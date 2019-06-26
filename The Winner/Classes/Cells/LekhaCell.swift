@@ -34,12 +34,14 @@ class LekhaCell: UICollectionViewCell {
             
             self.secondPlayerTF.text = "\(lap.players[1].getResult())"
             self.secondPlayerTF.isEnabled = false
-            
-            self.thirdPlayerTF.text = "\(lap.players[2].getResult())"
-            self.thirdPlayerTF.isEnabled = false
-            
-            self.forthPlayerTF.text = "\(lap.players[3].getResult())"
-            self.forthPlayerTF.isEnabled = false
+            if DataStore.shared.currentGame!.numberOfPlayers > 2{
+                self.thirdPlayerTF.text = "\(lap.players[2].getResult())"
+                self.thirdPlayerTF.isEnabled = false
+                if DataStore.shared.currentGame!.numberOfPlayers > 3{
+                    self.forthPlayerTF.text = "\(lap.players[3].getResult())"
+                    self.forthPlayerTF.isEnabled = false
+                }
+            }
         }
     }
     
