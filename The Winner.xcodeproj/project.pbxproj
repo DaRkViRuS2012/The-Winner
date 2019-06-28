@@ -96,6 +96,8 @@
 		14E7590A22C0F9D800853864 /* LekhaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E7590822C0F9D800853864 /* LekhaCell.xib */; };
 		14E7590C22C0FAE400853864 /* LekhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E7590B22C0FAE400853864 /* LekhaViewController.swift */; };
 		14E7590E22C0FFE000853864 /* ConcanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E7590D22C0FFE000853864 /* ConcanViewController.swift */; };
+		14EF95C922C63F6500692E8A /* ComplexNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EF95C822C63F6500692E8A /* ComplexNormalViewController.swift */; };
+		14EF95CB22C6400E00692E8A /* ComplexGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EF95CA22C6400E00692E8A /* ComplexGroupViewController.swift */; };
 		14F9C32422AC7C3F004C0A62 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9C32322AC7C3F004C0A62 /* AboutViewController.swift */; };
 		9A3D495AC5E9CCB917BD6A56 /* Pods_The_Winner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E78D04C0E27E81AF00B90226 /* Pods_The_Winner.framework */; };
 /* End PBXBuildFile section */
@@ -197,6 +199,8 @@
 		14E7590822C0F9D800853864 /* LekhaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LekhaCell.xib; sourceTree = "<group>"; };
 		14E7590B22C0FAE400853864 /* LekhaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LekhaViewController.swift; sourceTree = "<group>"; };
 		14E7590D22C0FFE000853864 /* ConcanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcanViewController.swift; sourceTree = "<group>"; };
+		14EF95C822C63F6500692E8A /* ComplexNormalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexNormalViewController.swift; sourceTree = "<group>"; };
+		14EF95CA22C6400E00692E8A /* ComplexGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexGroupViewController.swift; sourceTree = "<group>"; };
 		14F9C32322AC7C3F004C0A62 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		6D1E7D8E69EBBA90902D8410 /* Pods-The Winner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Winner.release.xcconfig"; path = "Pods/Target Support Files/Pods-The Winner/Pods-The Winner.release.xcconfig"; sourceTree = "<group>"; };
 		803F72CBBB0CC7A64434E6EF /* Pods-The Winner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Winner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The Winner/Pods-The Winner.debug.xcconfig"; sourceTree = "<group>"; };
@@ -431,6 +435,8 @@
 				14A9591B22B901FE006BB3E9 /* TarneebViewViewController.swift */,
 				14E7590B22C0FAE400853864 /* LekhaViewController.swift */,
 				14E7590D22C0FFE000853864 /* ConcanViewController.swift */,
+				14EF95C822C63F6500692E8A /* ComplexNormalViewController.swift */,
+				14EF95CA22C6400E00692E8A /* ComplexGroupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -643,6 +649,7 @@
 				141789A422B75E0B00601A0F /* GamesViewController.swift in Sources */,
 				147E1DC62299C1F5008501B2 /* ViewController.swift in Sources */,
 				147E1EB32299C4FF008501B2 /* UIImageView.swift in Sources */,
+				14EF95C922C63F6500692E8A /* ComplexNormalViewController.swift in Sources */,
 				147E1E902299C4FF008501B2 /* AppUser.swift in Sources */,
 				147E1F002299CD86008501B2 /* BaseModel.swift in Sources */,
 				147E1EB42299C4FF008501B2 /* UIApplication.swift in Sources */,
@@ -661,6 +668,7 @@
 				141789A622B788E700601A0F /* Game.swift in Sources */,
 				147E1E8E2299C4FF008501B2 /* Location.swift in Sources */,
 				147E1EAC2299C4FF008501B2 /* XUITextField.swift in Sources */,
+				14EF95CB22C6400E00692E8A /* ComplexGroupViewController.swift in Sources */,
 				147E1EAD2299C4FF008501B2 /* UITextField.swift in Sources */,
 				147E1E9E2299C4FF008501B2 /* UIView.swift in Sources */,
 				147E1E8A2299C4FF008501B2 /* Actions.swift in Sources */,

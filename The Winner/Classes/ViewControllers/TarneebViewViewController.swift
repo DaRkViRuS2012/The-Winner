@@ -38,9 +38,13 @@ class TarneebViewViewController: AbstractController {
     @IBOutlet weak var tarneeb61ResultTF: XUITextField!
     
     var selectedButton:XUIButton?
+    var isFirstTeam:Bool = false
+    var isSecondTeam:Bool = false
+    var selectedNumber:Int?
     
     var laps:[Lap] = []
     let cellId = "Tarneeb41Cell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.showNavBackButton  = true
@@ -49,18 +53,22 @@ class TarneebViewViewController: AbstractController {
         }else{
             self.setNavBarTitle(title: "طرنيب 61")
         }
+        
         let nib = UINib(nibName: cellId, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellId)
         self.tabBarController?.hidesBottomBarWhenPushed = true
         setResult()
         firstPlayerNameLabel.text = DataStore.shared.currentGame?.players[0].name
         secondPlayerNameLabel.text = DataStore.shared.currentGame?.players[1].name
+        
         if let type = DataStore.shared.currentGame?.type , type == .tarneb41{
             thirdPlayerNameLabel.text = DataStore.shared.currentGame?.players[2].name
             forthPlayerNameLabel.text =  DataStore.shared.currentGame?.players[3].name
         }else{
             thirdPlayerNameLabel.isHidden = true
             forthPlayerNameLabel.isHidden = true
+            self.firstTeamButton.setTitle(DataStore.shared.currentGame?.players[0].name, for: .normal)
+            self.secondTeemButton.setTitle(DataStore.shared.currentGame?.players[1].name, for: .normal)
         }
     }
     
@@ -206,90 +214,53 @@ class TarneebViewViewController: AbstractController {
     func validateTarneeb61Lap()->Bool{
         let lap = Lap()
         lap.players = [Player(name:""),Player(name:""),Player(name:""),Player(name:"")]
-        if let firstPlayer = tarneeb41FPTF.text , !firstPlayer.isEmpty,let resut = Int(firstPlayer){
-            lap.players[0].result = (resut >= 5) ? resut * 2 : resut
+        
+        
+        if isFirstTeam{
+            if let num = selectedNumber{
+                if let val = tarneeb61ResultTF.text , !val.isEmpty , let res =  Int(val){
+                    if res >= num{
+                        lap.players[0].setResult(res: num)
+                        lap.players[1].setResult(res: 0)
+                    }else{
+                        lap.players[0].setResult(res: -num)
+                        lap.players[1].setResult(res: 13 - res)
+                    }
+                    
+                }else{
+                    self.showMessage(message:"يرجى ادخال عدد الاكلات", type: .error)
+                    return false
+                }
+                
+            }else{
+                self.showMessage(message:"يرجى تحديد الطلب", type: .error)
+                return false
+            }
+        }else if isSecondTeam{
+            if let num = selectedNumber{
+                if let val = tarneeb61ResultTF.text , !val.isEmpty , let res =  Int(val){
+                    if res >= num{
+                        lap.players[1].setResult(res: num)
+                        lap.players[0].setResult(res: 0)
+                    }else{
+                        lap.players[1].setResult(res: -num)
+                        lap.players[0].setResult(res: 13 - res)
+                    }
+                }else{
+                    self.showMessage(message:"يرجى ادخال عدد الاكلات", type: .error)
+                    return false
+                }
+                
+            }else{
+                self.showMessage(message:"يرجى تحديد الطلب", type: .error)
+                return false
+            }
         }else{
-            self.showMessage(message:"الرجاء ادخال كافة النتائج", type: .error)
+            self.showMessage(message:"يرجى اختيار الفريق", type: .error)
             return false
         }
-        
-        if let firstPlayer = tqrneeb41SPTF.text , !firstPlayer.isEmpty,let resut = Int(firstPlayer){
-            lap.players[1].result = resut >= 5 ? resut * 2 : resut
-            
-        }else{
-            self.showMessage(message: "الرجاء ادخال كافة النتائج", type: .error)
-            return false
-        }
-        
-        if let firstPlayer = tarneeb41TPTF.text , !firstPlayer.isEmpty,let resut = Int(firstPlayer){
-            lap.players[2].result = resut >= 5 ? resut * 2 : resut
-        }else{
-            self.showMessage(message: "الرجاء ادخال كافة النتائج", type: .error)
-            return false
-        }
-        
-        if let firstPlayer = tarneeb41FTPTF.text , !firstPlayer.isEmpty,let resut = Int(firstPlayer){
-            lap.players[3].result = resut >= 5 ? resut * 2 : resut
-            
-        }else{
-            self.showMessage(message: "الرجاء ادخال كافة النتائج", type: .error)
-            return false
-        }
-        
-        
-        if tarneeb41FPSC.selectedSegmentIndex != -1{
-            
-        }else{
-            self.showMessage(message:"الرجاء اختيار الرابح والخاسر لجميع اللاعبين", type: .error)
-            return false
-        }
-        
-        if tarneeb41SPSC.selectedSegmentIndex  != -1{
-            
-        }else{
-            self.showMessage(message:"الرجاء اختيار الرابح والخاسر لجميع اللاعبين", type: .error)
-            return false
-        }
-        
-        
-        if tarneeb41TPSC.selectedSegmentIndex != -1{
-            
-        }else{
-            self.showMessage(message:"الرجاء اختيار الرابح والخاسر لجميع اللاعبين", type: .error)
-            return false
-        }
-        
-        if  tarneeb41FTPSC.selectedSegmentIndex != -1{
-            
-        }else{
-            self.showMessage(message:"الرجاء اختيار الرابح والخاسر لجميع اللاعبين", type: .error)
-            return false
-        }
-        
-        if tarneeb41FPSC.selectedSegmentIndex == 0{
-            DataStore.shared.currentGame?.players[0].setResult(res: -lap.players[0].result)
-        }else{
-            DataStore.shared.currentGame?.players[0].setResult(res: lap.players[0].result)
-        }
-        
-        if tarneeb41SPSC.selectedSegmentIndex == 0{
-            DataStore.shared.currentGame?.players[1].setResult(res: -lap.players[1].result)
-        }else{
-            DataStore.shared.currentGame?.players[1].setResult(res: lap.players[1].result)
-        }
-        
-        if tarneeb41TPSC.selectedSegmentIndex == 0{
-            DataStore.shared.currentGame?.players[2].setResult(res: -lap.players[2].result)
-        }else{
-            DataStore.shared.currentGame?.players[2].setResult(res: lap.players[2].result)
-        }
-        
-        if tarneeb41FTPSC.selectedSegmentIndex == 0{
-            DataStore.shared.currentGame?.players[3].setResult(res: -lap.players[3].result)
-        }else{
-            DataStore.shared.currentGame?.players[3].setResult(res: lap.players[3].result)
-        }
-        
+        DataStore.shared.currentGame?.players[0].setResult(res: lap.players[0].getResult())
+        DataStore.shared.currentGame?.players[1].setResult(res: lap.players[1].getResult())
         self.laps.append(lap)
         setResult()
         collectionView.reloadData()
@@ -307,6 +278,12 @@ class TarneebViewViewController: AbstractController {
         self.tarneeb61View.isHidden = true
         tarneeb61ResultTF.text = nil
         selectedButton?.isSelected = false
+        self.selectedNumber = nil
+        self.selectedButton?.isSelected = false
+        self.firstTeamButton.isSelected = false
+        self.secondTeemButton.isSelected = false
+        self.isFirstTeam = false
+        self.isSecondTeam = false
         self.view.endEditing(true)
     }
     
@@ -323,22 +300,29 @@ class TarneebViewViewController: AbstractController {
     @IBAction func setFirstTeam(_ sender: XUIButton) {
         sender.isSelected = true
         secondTeemButton.isSelected = false
+        isFirstTeam = true
+        isSecondTeam = false
     }
     
     @IBAction func setSecondTeam(_ sender: XUIButton) {
         sender.isSelected = true
         firstTeamButton.isSelected = false
+        isFirstTeam = false
+        isSecondTeam = true
+        selectedNumber = nil
+        selectedButton?.isSelected = false
     }
+    
     @IBAction func selectNumber(_ sender: XUIButton) {
         selectedButton?.isSelected = false
         selectedButton = sender
-        selectedButton?.primary = true
         selectedButton?.isSelected = true
+        if let num = Int(sender.currentTitle ?? "") {
+            selectedNumber = num
+        }
     }
     
-    @IBAction func set7(_ sender: XUIButton) {
-        sender.isSelected = true
-    }
+
 }
 
 extension TarneebViewViewController:UICollectionViewDelegate,UICollectionViewDataSource{

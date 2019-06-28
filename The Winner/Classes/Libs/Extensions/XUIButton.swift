@@ -20,20 +20,25 @@ class XUIButton:UIButton{
     
     @IBInspectable var primary:Bool {
         didSet{
-
             if primary{
                 self.backgroundColor = AppColors.primary
                 borderWidth = 1
                 isSelected = false
+                self.tintColor = .clear
+                
                 self.makeRounded()
                 self.setTitleColor(.white, for: .normal)
+                self.setTitleColor(AppColors.primary,for: .selected)
             }
         }
     }
+    
+    
     override var isSelected: Bool {
         didSet {
-            layer.borderColor = !isSelected ? UIColor.white.cgColor : AppColors.primary.cgColor
             self.backgroundColor = !isSelected ? AppColors.primary :  UIColor.white
+            layer.borderColor = !isSelected ? UIColor.white.cgColor : AppColors.primary.cgColor
+          
         }
     }
     

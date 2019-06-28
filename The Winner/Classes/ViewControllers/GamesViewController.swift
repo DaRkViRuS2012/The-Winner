@@ -45,7 +45,16 @@ class GamesViewController: AbstractController {
     
     // complex
     @IBOutlet weak var complexView: UIView!
+    @IBOutlet weak var complexGameTypeView: UIView!
+    @IBOutlet weak var complexNormalPlayersView: UIView!
+    @IBOutlet weak var complexGroupPlayersView: UIView!
+    @IBOutlet weak var complexGameTypeSG: UISegmentedControl!
     
+    @IBOutlet weak var complexFirtsPlayerTF: XUITextField!
+    @IBOutlet weak var complexSecondPlayerTF: XUITextField!
+    @IBOutlet weak var complexThirdPlayerTF: XUITextField!
+    @IBOutlet weak var complexForthPlayerTF: XUITextField!
+    @IBOutlet weak var complexTeamNameTF: XUITextField!
     // trex
     @IBOutlet weak var trexView: UIView!
     
@@ -307,6 +316,120 @@ class GamesViewController: AbstractController {
             DataStore.shared.currentGame = Game(type: .concan, numberOfPlayers: playersNames.count)
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
             let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "ConcanViewController") as! ConcanViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    
+    
+    // complex
+  
+    func validateComplexGroup()-> Bool{
+        
+        if let firstPlayer = complexTeamNameTF.text , !firstPlayer.isEmpty{
+            playersNames.append(firstPlayer)
+        }else{
+            self.showMessage(message: "الرجاء ادخال اسم الفريق", type: .error)
+            return false
+        }
+ 
+        return true
+    }
+    
+    func validateComplexNormal()-> Bool{
+        
+        if let firstPlayer = complexFirtsPlayerTF.text , !firstPlayer.isEmpty{
+            playersNames.append(firstPlayer)
+        }else{
+            self.showMessage(message: "الرجاء ادخال كافة اللاعبين", type: .error)
+            return false
+        }
+        
+        if let firstPlayer = complexSecondPlayerTF.text , !firstPlayer.isEmpty{
+            playersNames.append(firstPlayer)
+        }else{
+            self.showMessage(message: "الرجاء ادخال كافة اللاعبين", type: .error)
+            return false
+        }
+        
+        if let firstPlayer = complexThirdPlayerTF.text , !firstPlayer.isEmpty{
+            playersNames.append(firstPlayer)
+        }else{
+                self.showMessage(message: "الرجاء ادخال كافة اللاعبين", type: .error)
+                return false
+        }
+
+
+        if let firstPlayer = complexForthPlayerTF.text , !firstPlayer.isEmpty{
+            playersNames.append(firstPlayer)
+        }else{
+            self.showMessage(message: "الرجاء ادخال كافة اللاعبين", type: .error)
+            return false
+        }
+        
+        
+        return true
+    }
+    
+    @IBAction func showComplexView(_ sender: UIButton) {
+        self.complexView.isHidden = false
+        self.complexGameTypeView.isHidden = false
+        self.complexGroupPlayersView.isHidden = true
+        self.complexNormalPlayersView.isHidden = true
+        self.complexGameTypeView.animateIn(mode: .animateInFromLeft, delay: 0.2)
+    }
+    
+    @IBAction func hideComplexView(_ sender: UITapGestureRecognizer) {
+        self.complexView.isHidden = true
+        self.complexFirtsPlayerTF.text = nil
+        self.complexSecondPlayerTF.text = nil
+        self.complexThirdPlayerTF.text = nil
+        self.complexForthPlayerTF.text = nil
+        self.complexTeamNameTF.text = nil
+        self.complexGameTypeSG.selectedSegmentIndex = -1
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func setComplexGameType(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            DataStore.shared.currentGame = Game(type: .trexComplex, numberOfPlayers: 1)
+            
+        }else if sender.selectedSegmentIndex == 1{
+            DataStore.shared.currentGame = Game(type: .trexComplex, numberOfPlayers: 4)
+            
+        }
+    }
+    
+    @IBAction func handelComplexGameType(_ sender: UIButton) {
+        if complexGameTypeSG.selectedSegmentIndex == -1{
+            self.showMessage(message: "الرجاء اختيار نوع اللعبة", type: .error)
+        }else if complexGameTypeSG.selectedSegmentIndex == 0{
+            self.complexGameTypeView.isHidden = true
+            self.complexGroupPlayersView.isHidden = false
+            self.complexGroupPlayersView.animateIn(mode: .animateInFromLeft, delay: 0.2)
+        }else if complexGameTypeSG.selectedSegmentIndex == 1{
+            self.complexGameTypeView.isHidden = true
+            self.complexNormalPlayersView.isHidden = false
+            self.complexNormalPlayersView.animateIn(mode: .animateInFromLeft, delay: 0.2)
+        }
+    }
+    
+    @IBAction func handelComplexNormalGame(_ sender: UIButton) {
+        playersNames.removeAll()
+        if validateComplexNormal(){
+            DataStore.shared.currentGame = Game(type: .trexComplex, numberOfPlayers: playersNames.count)
+            DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
+            let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "ComplexNormalViewController") as! ComplexNormalViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    @IBAction func handelComplexGroupGame(_ sender: UIButton) {
+        playersNames.removeAll()
+        if validateComplexGroup(){
+            DataStore.shared.currentGame = Game(type: .trexComplex, numberOfPlayers: playersNames.count)
+            DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
+            let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "ComplexGroupViewController") as! ComplexGroupViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
