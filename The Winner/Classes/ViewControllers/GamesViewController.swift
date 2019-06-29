@@ -57,7 +57,17 @@ class GamesViewController: AbstractController {
     @IBOutlet weak var complexTeamNameTF: XUITextField!
     // trex
     @IBOutlet weak var trexView: UIView!
+    @IBOutlet weak var trexGameTypeView: UIView!
+    @IBOutlet weak var trexNormalPlayersView: UIView!
+    @IBOutlet weak var trexGroupPlayersView: UIView!
+    @IBOutlet weak var trexGameTypeSG: UISegmentedControl!
     
+    @IBOutlet weak var trexFirtsPlayerTF: XUITextField!
+    @IBOutlet weak var trexSecondPlayerTF: XUITextField!
+    @IBOutlet weak var trexThirdPlayerTF: XUITextField!
+    @IBOutlet weak var trexForthPlayerTF: XUITextField!
+    @IBOutlet weak var trexTeamNameTF: XUITextField!
+    @IBOutlet weak var trexTeamGameTypeSG: UISegmentedControl!
     
     var playersNames:[String] = []
     
@@ -434,6 +444,130 @@ class GamesViewController: AbstractController {
         }
     }
     
+    // trex
+    
+    func validateTrexGroup()-> Bool{
+        
+        if let firstPlayer = trexTeamNameTF.text , !firstPlayer.isEmpty{
+            playersNames.append(firstPlayer)
+        }else{
+            self.showMessage(message: "الرجاء ادخال اسم الفريق", type: .error)
+            return false
+        }
+        
+        if trexTeamGameTypeSG.selectedSegmentIndex != -1{
+            
+        }else{
+            self.showMessage(message: "الرجاء اختيار نوع اللعب", type: .error)
+            return false
+        }
+        
+        return true
+    }
+    
+    func validateTrexNormal()-> Bool{
+        
+        if let firstPlayer = trexFirtsPlayerTF.text , !firstPlayer.isEmpty{
+            playersNames.append(firstPlayer)
+        }else{
+            self.showMessage(message: "الرجاء ادخال كافة اللاعبين", type: .error)
+            return false
+        }
+        
+        if let firstPlayer = trexSecondPlayerTF.text , !firstPlayer.isEmpty{
+            playersNames.append(firstPlayer)
+        }else{
+            self.showMessage(message: "الرجاء ادخال كافة اللاعبين", type: .error)
+            return false
+        }
+        
+        if let firstPlayer = trexThirdPlayerTF.text , !firstPlayer.isEmpty{
+            playersNames.append(firstPlayer)
+        }else{
+            self.showMessage(message: "الرجاء ادخال كافة اللاعبين", type: .error)
+            return false
+        }
+        
+        
+        if let firstPlayer = trexForthPlayerTF.text , !firstPlayer.isEmpty{
+            playersNames.append(firstPlayer)
+        }else{
+            self.showMessage(message: "الرجاء ادخال كافة اللاعبين", type: .error)
+            return false
+        }
+        
+        
+        return true
+    }
+    
+    @IBAction func showTrexView(_ sender: UIButton) {
+        self.trexView.isHidden = false
+        self.trexGameTypeView.isHidden = false
+        self.trexGroupPlayersView.isHidden = true
+        self.trexNormalPlayersView.isHidden = true
+        self.trexGameTypeView.animateIn(mode: .animateInFromLeft, delay: 0.2)
+    }
+    
+    @IBAction func hideTrexView(_ sender: UITapGestureRecognizer) {
+        self.trexView.isHidden = true
+        self.trexFirtsPlayerTF.text = nil
+        self.trexSecondPlayerTF.text = nil
+        self.trexThirdPlayerTF.text = nil
+        self.trexForthPlayerTF.text = nil
+        self.trexTeamNameTF.text = nil
+        self.trexGameTypeSG.selectedSegmentIndex = -1
+        self.trexTeamGameTypeSG.selectedSegmentIndex = -1
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func setTrexGameType(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            DataStore.shared.currentGame = Game(type: .trex, numberOfPlayers: 1)
+            
+        }else if sender.selectedSegmentIndex == 1{
+            DataStore.shared.currentGame = Game(type: .trex, numberOfPlayers: 4)
+            
+        }
+    }
+    
+    @IBAction func handelTrexGameType(_ sender: UIButton) {
+        if trexGameTypeSG.selectedSegmentIndex == -1{
+            self.showMessage(message: "الرجاء اختيار نوع اللعبة", type: .error)
+        }else if trexGameTypeSG.selectedSegmentIndex == 0{
+            self.trexGameTypeView.isHidden = true
+            self.trexGroupPlayersView.isHidden = false
+            self.trexGroupPlayersView.animateIn(mode: .animateInFromLeft, delay: 0.2)
+        }else if trexGameTypeSG.selectedSegmentIndex == 1{
+            self.trexGameTypeView.isHidden = true
+            self.trexNormalPlayersView.isHidden = false
+            self.trexNormalPlayersView.animateIn(mode: .animateInFromLeft, delay: 0.2)
+        }
+    }
+    
+    @IBAction func handelTrexNormalGame(_ sender: UIButton) {
+        playersNames.removeAll()
+        if validateTrexNormal(){
+            DataStore.shared.currentGame = Game(type: .trex, numberOfPlayers: playersNames.count)
+            DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
+            let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "TrexNormalViewController") as! TrexNormalViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    @IBAction func setTrexTeamType(_ sender: UISegmentedControl) {
+        
+    }
+    
+    
+    @IBAction func handelTrexGroupGame(_ sender: UIButton) {
+        playersNames.removeAll()
+        if validateTrexGroup(){
+            DataStore.shared.currentGame = Game(type: .trex, numberOfPlayers: playersNames.count)
+            DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
+            let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "ComplexGroupViewController") as! ComplexGroupViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

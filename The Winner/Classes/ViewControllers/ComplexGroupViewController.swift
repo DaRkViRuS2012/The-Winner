@@ -61,11 +61,11 @@ class ComplexGroupViewController: AbstractController {
         
         // Do any additional setup after loading the view.
         firstPlayerResult = 0
-        
-        
+    
         lap1FPLabel.text = DataStore.shared.currentGame?.players[0].name
         
-        
+        self.setNavBarTitle(title: "تركس كومبلكس")
+        self.showNavBackButton = true
     }
     
     

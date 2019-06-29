@@ -90,6 +90,7 @@
 		14A9591C22B901FE006BB3E9 /* TarneebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A9591B22B901FE006BB3E9 /* TarneebViewViewController.swift */; };
 		14A9592122B903B8006BB3E9 /* Tarneeb41Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A9591F22B903B8006BB3E9 /* Tarneeb41Cell.swift */; };
 		14A9592222B903B8006BB3E9 /* Tarneeb41Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A9592022B903B8006BB3E9 /* Tarneeb41Cell.xib */; };
+		14B9CAB022C7AE4E00651F3F /* TrexNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B9CAAF22C7AE4E00651F3F /* TrexNormalViewController.swift */; };
 		14DAEDA922ABEB3F007F8C2D /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAEDA722ABEB3F007F8C2D /* OfferCell.swift */; };
 		14DAEDAA22ABEB3F007F8C2D /* OfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DAEDA822ABEB3F007F8C2D /* OfferCell.xib */; };
 		14E7590922C0F9D800853864 /* LekhaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E7590722C0F9D800853864 /* LekhaCell.swift */; };
@@ -193,6 +194,7 @@
 		14A9591B22B901FE006BB3E9 /* TarneebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarneebViewViewController.swift; sourceTree = "<group>"; };
 		14A9591F22B903B8006BB3E9 /* Tarneeb41Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tarneeb41Cell.swift; path = ../Tarneeb41Cell.swift; sourceTree = "<group>"; };
 		14A9592022B903B8006BB3E9 /* Tarneeb41Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Tarneeb41Cell.xib; path = ../Tarneeb41Cell.xib; sourceTree = "<group>"; };
+		14B9CAAF22C7AE4E00651F3F /* TrexNormalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrexNormalViewController.swift; sourceTree = "<group>"; };
 		14DAEDA722ABEB3F007F8C2D /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
 		14DAEDA822ABEB3F007F8C2D /* OfferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferCell.xib; sourceTree = "<group>"; };
 		14E7590722C0F9D800853864 /* LekhaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LekhaCell.swift; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 				14E7590D22C0FFE000853864 /* ConcanViewController.swift */,
 				14EF95C822C63F6500692E8A /* ComplexNormalViewController.swift */,
 				14EF95CA22C6400E00692E8A /* ComplexGroupViewController.swift */,
+				14B9CAAF22C7AE4E00651F3F /* TrexNormalViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -689,6 +692,7 @@
 				147E1EA22299C4FF008501B2 /* Collection.swift in Sources */,
 				147E1E912299C4FF008501B2 /* Restaurant.swift in Sources */,
 				147E1F0E2299DCB0008501B2 /* RestaurantCell.swift in Sources */,
+				14B9CAB022C7AE4E00651F3F /* TrexNormalViewController.swift in Sources */,
 				147E1DC42299C1F5008501B2 /* AppDelegate.swift in Sources */,
 				147E1EB62299C4FF008501B2 /* UITextView.swift in Sources */,
 				147E1E882299C4FF008501B2 /* DataStore.swift in Sources */,
