@@ -9,6 +9,10 @@ target 'The Winner' do
 	pod 'Toast-Swift'
 	pod 'SDWebImage/WebP'
     pod 'IQKeyboardManagerSwift'
+    pod 'DropDown', '2.3.2'
+    pod 'NextResponderTextField'
+    pod 'Firebase/Core'
+    pod 'Firebase/Messaging'
   # Pods for The Winner
 
 end

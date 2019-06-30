@@ -8,9 +8,28 @@
 
 
 import UIKit
+import DropDown
+
+protocol XUIButtonDelegate {
+    func didSelecteItem(index:Int,title:String)
+}
 
 @IBDesignable
 class XUIButton:UIButton{
+    
+    // drop Down
+    let dropDown = DropDown()
+    var hasDropDown:Bool = false
+    var itemList:[String] = []{
+        didSet{
+            hasDropDown = true
+            
+            prepareDropDown()
+        }
+    }
+    
+    var xDelegate: XUIButtonDelegate?
+    
     
     @IBInspectable var localization: String = "" {
         didSet {
@@ -72,6 +91,38 @@ class XUIButton:UIButton{
         }else{
             self.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -20)
         }
+        
+        if hasDropDown{
+            prepareDropDown()
+        }
+    }
+    
+    func prepareDropDown(){
+        dropDown.dataSource = itemList
+        self.addTarget(self, action: #selector(toggleDropDown), for: .touchUpInside)
+        dropDown.anchorView = self
+        dropDown.width = 200
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            print("Selected item: \(item) at index: \(index)")
+            
+            self.setTitle(item, for: .normal)
+            self.xDelegate?.didSelecteItem(index: index, title: item)
+        }
+    }
+    
+    @objc func toggleDropDown(){
+        if dropDown.isHidden{
+            dropDown.show()
+        }else{
+            dropDown.hide()
+        }
+    }
+    
+    var result:Int{
+        if let t = self.currentTitle, let num = Int(t){
+            return num
+        }
+        return 0
     }
     
   

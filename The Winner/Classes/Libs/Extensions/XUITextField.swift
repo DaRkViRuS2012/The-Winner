@@ -8,22 +8,30 @@
 
 import Foundation
 import UIKit
-
-
-
+import DropDown
+import NextResponderTextField
 
 @IBDesignable
-class XUITextField:UITextField{
+class XUITextField:NextResponderTextField{
     
     @IBInspectable var primary:Bool {
         didSet{
             if primary{
-                self.keyboardType = UIKeyboardType.decimalPad
+                if #available(iOS 10.0, *) {
+                    self.keyboardType = UIKeyboardType.asciiCapableNumberPad
+                } else {
+                    self.keyboardType = UIKeyboardType.numberPad
+                }
                 self.textAlignment = .center
                 self.languageCode = "en"
+                self.contentVerticalAlignment = .center
+                self.contentHorizontalAlignment = .center
+                self.textAlignment = .center
+                self.contentMode = .center
             }
         }
     }
+    
     
     init(primary:Bool){
         self.primary = primary
@@ -89,6 +97,7 @@ class XUITextField:UITextField{
         if primary{
             self.inputAccessoryView = getAccessoryButtons()
         }
+        
     }
 
     
@@ -101,7 +110,7 @@ class XUITextField:UITextField{
     }
 
     
-    var languageCode:String?{
+    var languageCode:String? = "en"{
         didSet{
             if self.isFirstResponder{
                 self.resignFirstResponder();
@@ -131,7 +140,125 @@ class XUITextField:UITextField{
         }
         return 0
     }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+//        self.text = self.text?.getEnglishNumber()
+        
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+         self.text = self.text?.getEnglishNumber()
+        return true
+    }
+
+    
+    
+    // better text field
+    
+    /// A buffer for the placeholder's text.
+    fileprivate var placeholderText: String?
+    
+    /// Determines if the user manually changed the text margins.
+    fileprivate var defaultMode = true
+    
+    /// The text's margin left manually set by the user.
+    fileprivate var textMarginLeft: CGFloat = 10.0
+    
+    /// The text's margin right manually set by the user.
+    fileprivate var textMarginRight: CGFloat = 0.0
+    
+    /// The text's margin left.
+    @IBInspectable open var marginLeft: CGFloat {
+        get {
+            if defaultMode && self.clearButtonMode != .never && self.textAlignment == .center {
+                return 24.0
+            } else {
+                return textMarginLeft
+            }
+        }
+        
+        set {
+            defaultMode = false
+            textMarginLeft = newValue
+        }
+    }
+    
+    /// The text's margin right.
+    @IBInspectable open var marginRight: CGFloat {
+        get {
+            if defaultMode && self.clearButtonMode != .never {
+                return 24.0
+            } else {
+                return textMarginRight
+            }
+        }
+        
+        set {
+            defaultMode = false
+            textMarginRight = newValue
+        }
+    }
+    
+
+    
+    // MARK: - Overridden methods
+    // Insets for the editable text position.
+    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
+        if primary{
+            return bounds.insetBy(dx: marginLeft, dy: marginRight)
+        }
+        return bounds
+        
+    }
+    
+    // Insets for the placeholder position.
+    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        if primary{
+            return bounds.insetBy(dx: marginLeft, dy: marginRight)
+        }
+        return bounds
+    }
+    
+    // Insets for the text position.
+    override open func textRect(forBounds bounds: CGRect) -> CGRect {
+        if primary{
+            return bounds.insetBy(dx: marginLeft, dy: marginRight)
+        }
+        return bounds
+    }
+    
+    /*
+     * Removes the placeholder text when text field becomes first responder to avoid cursor jumping,
+     * if text alignment is set to centered.
+     */
+    override open func becomeFirstResponder() -> Bool {
+        let becameFirstResponder = super.becomeFirstResponder()
+        
+        if becameFirstResponder {
+            placeholderText = placeholder
+            placeholder = ""
+        }
+        
+        return becameFirstResponder
+    }
+    
+    /*
+     * Restores the placeholder text to its original value, before it was removed when text field became
+     * first responder.
+     */
+    override open func resignFirstResponder() -> Bool {
+        let resigendFirstResponder = super.resignFirstResponder()
+        
+        if resigendFirstResponder {
+            placeholder = placeholderText
+            placeholderText = ""
+        }
+        
+        return resigendFirstResponder
+    }
 }
+
+
+
 
 
 class PasswordTextField:UITextField{

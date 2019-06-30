@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "tarneb41.jpeg",
+      "filename" : "tarneb41.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "tarneb41-2.jpeg",
+      "filename" : "tarneb41-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "tarneb41-1.jpeg",
+      "filename" : "tarneb41-2.png",
       "scale" : "3x"
     }
   ],

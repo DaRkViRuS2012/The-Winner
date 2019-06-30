@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CountriesViewController: AbstractController {
 
@@ -25,6 +26,17 @@ class CountriesViewController: AbstractController {
         collectionView.register(nib, forCellWithReuseIdentifier: cellId)
 //        self.showNavBackButton = true
         self.showNavAboutAndOffersButton = true
+        
+        Messaging.messaging().subscribe(toTopic: "news") { error in
+            print("Subscribed to weather topic")
+        }
+        setTabBarTitles()
+    }
+    
+    func setTabBarTitles(){
+        guard let items = self.tabBarController?.tabBar.items else { return }
+        items[0].title = "المطاعم"
+        items[1].title = "الالعاب"
     }
     
     override func viewWillAppear(_ animated: Bool) {

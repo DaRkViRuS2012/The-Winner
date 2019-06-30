@@ -14,6 +14,8 @@ enum GameType{
     case concan
     case lekha
     case trex
+    case trexGroupNormal
+    case trexGroupDouble
     case trexComplex
 }
 

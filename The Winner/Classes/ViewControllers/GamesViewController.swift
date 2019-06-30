@@ -121,6 +121,7 @@ class GamesViewController: AbstractController {
     @IBAction func handleTarneeb41Game(_ sender: UIButton) {
         playersNames.removeAll()
         if validateTarneeb41(){
+            hideTarneeb41(UITapGestureRecognizer())
             DataStore.shared.currentGame = Game(type: .tarneb41, numberOfPlayers: playersNames.count)
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
             let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "TarneebViewViewController") as! TarneebViewViewController
@@ -172,6 +173,7 @@ class GamesViewController: AbstractController {
     @IBAction func handelTarneeb61Game(_ sender: UIButton) {
         playersNames.removeAll()
         if validateTarneeb61(){
+            hideTarneeb61(UITapGestureRecognizer())
             DataStore.shared.currentGame = Game(type: .tarneb61, numberOfPlayers: playersNames.count)
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
             let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "TarneebViewViewController") as! TarneebViewViewController
@@ -230,6 +232,7 @@ class GamesViewController: AbstractController {
     @IBAction func handelLekhaGame(_ sender: UIButton) {
         playersNames.removeAll()
         if validateLekha(){
+            hideLekha(UITapGestureRecognizer())
             DataStore.shared.currentGame = Game(type: .lekha, numberOfPlayers: playersNames.count)
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
             let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "LekhaViewController") as! LekhaViewController
@@ -323,6 +326,7 @@ class GamesViewController: AbstractController {
     @IBAction func handelConcanGame(_ sender: UIButton) {
         playersNames.removeAll()
         if validateConcan(){
+            hideConcan(UITapGestureRecognizer())
             DataStore.shared.currentGame = Game(type: .concan, numberOfPlayers: playersNames.count)
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
             let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "ConcanViewController") as! ConcanViewController
@@ -427,6 +431,7 @@ class GamesViewController: AbstractController {
     @IBAction func handelComplexNormalGame(_ sender: UIButton) {
         playersNames.removeAll()
         if validateComplexNormal(){
+            hideComplexView(UITapGestureRecognizer())
             DataStore.shared.currentGame = Game(type: .trexComplex, numberOfPlayers: playersNames.count)
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
             let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "ComplexNormalViewController") as! ComplexNormalViewController
@@ -437,6 +442,7 @@ class GamesViewController: AbstractController {
     @IBAction func handelComplexGroupGame(_ sender: UIButton) {
         playersNames.removeAll()
         if validateComplexGroup(){
+            hideComplexView(UITapGestureRecognizer())
             DataStore.shared.currentGame = Game(type: .trexComplex, numberOfPlayers: playersNames.count)
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
             let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "ComplexGroupViewController") as! ComplexGroupViewController
@@ -547,6 +553,7 @@ class GamesViewController: AbstractController {
     @IBAction func handelTrexNormalGame(_ sender: UIButton) {
         playersNames.removeAll()
         if validateTrexNormal(){
+            hideTrexView(UITapGestureRecognizer())
             DataStore.shared.currentGame = Game(type: .trex, numberOfPlayers: playersNames.count)
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
             let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "TrexNormalViewController") as! TrexNormalViewController
@@ -555,16 +562,22 @@ class GamesViewController: AbstractController {
     }
     
     @IBAction func setTrexTeamType(_ sender: UISegmentedControl) {
-        
+        trexTeamGameTypeSG.selectedSegmentIndex = sender.selectedSegmentIndex
+        if sender.selectedSegmentIndex == 0{
+            DataStore.shared.currentGame = Game(type: .trexGroupNormal, numberOfPlayers: 1)
+            
+        }else{
+            DataStore.shared.currentGame = Game(type: .trexGroupDouble, numberOfPlayers: 1)
+        }
     }
     
     
     @IBAction func handelTrexGroupGame(_ sender: UIButton) {
         playersNames.removeAll()
         if validateTrexGroup(){
-            DataStore.shared.currentGame = Game(type: .trex, numberOfPlayers: playersNames.count)
+            hideTrexView(UITapGestureRecognizer())
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
-            let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "ComplexGroupViewController") as! ComplexGroupViewController
+            let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "TrexGroupViewController") as! TrexGroupViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

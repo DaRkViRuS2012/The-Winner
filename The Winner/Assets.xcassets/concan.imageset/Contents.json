@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "concan.jpeg",
+      "filename" : "concan.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "concan-1.jpeg",
+      "filename" : "concan-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "concan-2.jpeg",
+      "filename" : "concan-2.png",
       "scale" : "3x"
     }
   ],

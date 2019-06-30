@@ -15,10 +15,12 @@ class TrexNormalViewController: AbstractController {
     @IBOutlet weak var lap1FPLabel: UILabel!
     @IBOutlet weak var lap1TPLabel: UILabel!
     @IBOutlet weak var lap1FTPLabel: UILabel!
+    
     @IBOutlet weak var lap1FPResultLabel: UILabel!
     @IBOutlet weak var lap1SPResultLabel: UILabel!
     @IBOutlet weak var lap1TPResultLabel: UILabel!
     @IBOutlet weak var lap1FTPResultLabel: UILabel!
+    
     @IBOutlet weak var lap1FPTrexTF: XUITextField!
     @IBOutlet weak var lap1FPBanatTF: XUITextField!
     @IBOutlet weak var lap1FPDenariTF: XUITextField!

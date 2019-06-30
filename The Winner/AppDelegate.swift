@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import DropDown
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,7 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         AppConfig.setNavigationStyle()
         IQKeyboardManager.shared.enable = true
+        DropDown.startListeningToKeyboard()
        // AppConfig.setTabBarStyle()
+        configureFireBase(application)
         return true
     }
 

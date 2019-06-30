@@ -100,4 +100,15 @@ extension String {
     func containsIgnoringCase(find: String) -> Bool{
         return self.range(of: find, options: NSString.CompareOptions.caseInsensitive) != nil
     }
+    
+    func getEnglishNumber()-> String{
+        let numberFormatter = NumberFormatter()
+        numberFormatter.locale = Locale(identifier: "EN")
+        if let finalText = numberFormatter.number(from: self)
+        {
+            print("Final text is: ", finalText)
+            return "\(finalText)"
+        }
+        return self
+    }
 }
