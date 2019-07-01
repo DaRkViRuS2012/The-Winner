@@ -22,6 +22,8 @@ class XUITextField:NextResponderTextField{
                 } else {
                     self.keyboardType = UIKeyboardType.numberPad
                 }
+                
+                
                 self.textAlignment = .center
                 self.languageCode = "en"
                 self.contentVerticalAlignment = .center
@@ -84,12 +86,14 @@ class XUITextField:NextResponderTextField{
             } else {
                 self.text = "-" + text
             }
+           NotificationCenter.default.post(name: .UITextViewTextDidChange, object: nil)
         }
     }
     
+ 
+    
     @objc func doneTouchUpInside(_ sender: UIButton!) {
-        self.resignFirstResponder();
-        
+        _ = self.resignFirstResponder();
     }
     
     override func layoutSubviews() {
@@ -105,7 +109,6 @@ class XUITextField:NextResponderTextField{
         super.awakeFromNib()
         
         self.appStyle()
-        
         self.placeholder = self.placeholder?.localized
     }
 
@@ -113,8 +116,8 @@ class XUITextField:NextResponderTextField{
     var languageCode:String? = "en"{
         didSet{
             if self.isFirstResponder{
-                self.resignFirstResponder();
-                self.becomeFirstResponder();
+                _ = self.resignFirstResponder();
+                _ = self.becomeFirstResponder();
             }
         }
     }
@@ -150,6 +153,9 @@ class XUITextField:NextResponderTextField{
         return true
     }
 
+    @objc func textFieldDidChange(_ textField : UITextField){
+        self.delegate?.textFieldDidBeginEditing?(self)
+    }
     
     
     // better text field

@@ -15,6 +15,7 @@ class RestaurantCell: UICollectionViewCell {
     @IBOutlet weak var phone1Label: UILabel!
     @IBOutlet weak var phone2Label: UILabel!
     @IBOutlet weak var openHoursLabel: UILabel!
+    @IBOutlet weak var startImageView: UIImageView!
     
     var restaurant:Restaurant?{
         didSet{
@@ -42,6 +43,12 @@ class RestaurantCell: UICollectionViewCell {
             
             if let hours = restaurant.openhours{
                 openHoursLabel.text = hours
+            }
+            
+            if let pre = restaurant.priority , pre != "0"{
+                self.startImageView.isHidden = false
+            }else{
+                self.startImageView.isHidden = true
             }
         }
     }

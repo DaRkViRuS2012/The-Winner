@@ -162,9 +162,13 @@ class ComplexNormalViewController: AbstractController {
         
         self.setNavBarTitle(title: "تركس كومبلكس")
         self.showNavBackButton = true
+        NotificationCenter.default.addObserver(self, selector: #selector(getResult(_:)), name: .UITextViewTextDidChange, object: nil)
     }
     
-    @IBAction func getResult(_ sender: UITextField) {
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .UITextViewTextDidChange, object: nil)
+    }
+    @IBAction func getResult(_ sender: Any) {
     
         var res1 = 0
         var res2 = 0
@@ -214,6 +218,10 @@ class ComplexNormalViewController: AbstractController {
         
         self.resultOverlayView.isHidden = false
         self.resultView.animateIn(mode: .animateInFromBottom, delay: 0.2)
+    }
+ 
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.getResult(textField)
     }
     
 }

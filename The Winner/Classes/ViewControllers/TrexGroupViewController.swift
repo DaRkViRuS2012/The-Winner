@@ -169,9 +169,15 @@ class TrexGroupViewController:  AbstractController {
         self.setNavBarTitle(title: "تركس")
         self.showNavBackButton = true
         getResult()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(getResult), name: .UITextViewTextDidChange, object: nil)
     }
     
-    func getResult() {
+    deinit {
+          NotificationCenter.default.removeObserver(self, name: .UITextViewTextDidChange, object: nil)
+    }
+    
+    @objc func getResult() {
         
         var res1 = 0
         
@@ -222,6 +228,10 @@ class TrexGroupViewController:  AbstractController {
         
         self.resultOverlayView.isHidden = false
         self.resultView.animateIn(mode: .animateInFromBottom, delay: 0.2)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.getResult()
     }
     
 }

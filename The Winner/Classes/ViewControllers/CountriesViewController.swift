@@ -27,7 +27,7 @@ class CountriesViewController: AbstractController {
 //        self.showNavBackButton = true
         self.showNavAboutAndOffersButton = true
         
-        Messaging.messaging().subscribe(toTopic: "news") { error in
+        Messaging.messaging().subscribe(toTopic: "news1") { error in
             print("Subscribed to weather topic")
         }
         setTabBarTitles()

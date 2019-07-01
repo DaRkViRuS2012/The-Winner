@@ -173,7 +173,11 @@ extension AppDelegate : MessagingDelegate {
     
     func showAlertAppDelegate(title: String,message : String,buttonTitle: String,window: UIWindow){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: buttonTitle, style: UIAlertAction.Style.default, handler: nil))
+       
+        alert.addAction( UIAlertAction(title: buttonTitle, style: .default) { (_) in
+//           UIApplication.visibleViewController()?.navigationController.pu
+            ActionShowOffers.execute()
+        })
         //window.rootViewController?.present(alert, animated: false, completion: nil)
         UIApplication.visibleViewController()?.present(alert, animated: true, completion: nil)
         

@@ -7948,11 +7948,6 @@
                             <constraint firstItem="X9w-p6-Nuj" firstAttribute="top" secondItem="Zxc-Zp-IhR" secondAttribute="top" id="y7m-0E-kQy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zxc-Zp-IhR"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="X9w-p6-Nuj"/>
-                            </mask>
-                        </variation>
                     </view>
                     <size key="freeformSize" width="375" height="1820"/>
                     <connections>
