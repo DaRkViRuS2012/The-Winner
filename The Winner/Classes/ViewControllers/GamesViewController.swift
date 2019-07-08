@@ -157,6 +157,7 @@ class GamesViewController: AbstractController {
         self.tarneeb41ThirdPlayerTF.text = nil
         self.tarneeb41FForthPlayerTF.text = nil
         self.view.endEditing(true)
+        self.showNavCloseButton = false
     }
     
     func validateTarneeb61()->Bool{
@@ -183,6 +184,7 @@ class GamesViewController: AbstractController {
         self.tarneeb61FirstPlayerTF.text = nil
         self.tarneeb61SecondPlayerTF.text = nil
         self.view.endEditing(true)
+        self.showNavCloseButton = false
     }
     
     @IBAction func showTarneeb61View(_ sender: UIButton) {
@@ -252,6 +254,7 @@ class GamesViewController: AbstractController {
         self.lekhaThirdPlayerTF.text = nil
         self.lekhaForthPlayerTF.text = nil
         self.view.endEditing(true)
+        self.showNavCloseButton = false
     }
     
     @IBAction func handelLekhaGame(_ sender: UIButton) {
@@ -324,6 +327,7 @@ class GamesViewController: AbstractController {
         self.concanForthPlayerTF.text = nil
         self.concanSegmentController.selectedSegmentIndex = -1
         self.view.endEditing(true)
+        self.showNavCloseButton = false
     }
     
     @IBAction func setConcanNumberOfPlayer(_ sender: UISegmentedControl) {
@@ -435,6 +439,7 @@ class GamesViewController: AbstractController {
         self.complexTeamNameTF.text = nil
         self.complexGameTypeSG.selectedSegmentIndex = -1
         self.view.endEditing(true)
+        self.showNavCloseButton = false
     }
     
     @IBAction func setComplexGameType(_ sender: UISegmentedControl) {
@@ -564,6 +569,7 @@ class GamesViewController: AbstractController {
         self.trexGameTypeSG.selectedSegmentIndex = -1
         self.trexTeamGameTypeSG.selectedSegmentIndex = -1
         self.view.endEditing(true)
+        self.showNavCloseButton = false
     }
     
     @IBAction func setTrexGameType(_ sender: UISegmentedControl) {

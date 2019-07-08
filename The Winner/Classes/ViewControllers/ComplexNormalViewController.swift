@@ -226,7 +226,7 @@ class ComplexNormalViewController: AbstractController {
         
         
         res4 = lap1FTPTrexTF.result + lap1FTPComplexTF.result
-        self.lap2FTPResultLabel.text = "\(res4)"
+        self.lap1FTPResultLabel.text = "\(res4)"
         res4 += lap2FTPTrexTF.result + lap2FTPComplexTF.result
         self.lap2FTPResultLabel.text = "\(res4)"
         res4 += lap3FTPTrexTF.result + lap3FTPComplexTF.result

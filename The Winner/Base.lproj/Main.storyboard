@@ -659,9 +659,6 @@
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
-                                                                <connections>
-                                                                    <outlet property="nextResponderField" destination="vMl-Ro-MfM" id="Fb9-qo-z0d"/>
-                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3017,27 +3014,37 @@
                                                                                                     <constraint firstAttribute="width" constant="1" id="lc0-lf-sTJ"/>
                                                                                                 </constraints>
                                                                                             </view>
+                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFc-AR-qoU">
+                                                                                                <rect key="frame" x="36.5" y="-0.5" width="1" height="50"/>
+                                                                                                <color key="backgroundColor" red="0.0001056488904" green="0.71033031089999998" blue="0.0001638976207" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                <constraints>
+                                                                                                    <constraint firstAttribute="width" constant="1" id="RVX-Fh-9Bk"/>
+                                                                                                </constraints>
+                                                                                            </view>
                                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JeP-eq-VKh" customClass="XUITextField" customModule="The_Winner" customModuleProvider="target">
                                                                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="50"/>
                                                                                                 <nil key="textColor"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                                                                 <connections>
-                                                                                                    <outlet property="nextResponderField" destination="pRe-gd-wac" id="cJt-c3-axn"/>
+                                                                                                    <outlet property="nextResponderField" destination="4Ex-1d-osw" id="cLI-vy-s8q"/>
                                                                                                 </connections>
                                                                                             </textField>
                                                                                         </subviews>
                                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <constraints>
+                                                                                            <constraint firstAttribute="bottom" secondItem="CFc-AR-qoU" secondAttribute="bottom" id="4fD-VO-xxY"/>
                                                                                             <constraint firstItem="jOp-rg-KUF" firstAttribute="top" secondItem="RzY-2O-Y2i" secondAttribute="top" id="9v7-8y-wRM"/>
                                                                                             <constraint firstItem="jOp-rg-KUF" firstAttribute="leading" secondItem="RzY-2O-Y2i" secondAttribute="leading" id="BR4-WS-JMc"/>
                                                                                             <constraint firstAttribute="right" secondItem="JeP-eq-VKh" secondAttribute="right" constant="1" id="Bbm-ph-zhh"/>
                                                                                             <constraint firstAttribute="bottom" secondItem="JeP-eq-VKh" secondAttribute="bottom" id="MvU-4r-AI6"/>
                                                                                             <constraint firstItem="JeP-eq-VKh" firstAttribute="left" secondItem="RzY-2O-Y2i" secondAttribute="left" id="OTN-32-5nm"/>
+                                                                                            <constraint firstAttribute="trailing" secondItem="CFc-AR-qoU" secondAttribute="trailing" id="ZXe-dk-lvC"/>
                                                                                             <constraint firstItem="EyY-n3-82U" firstAttribute="leading" secondItem="RzY-2O-Y2i" secondAttribute="leading" id="ZYC-hH-ccX"/>
                                                                                             <constraint firstAttribute="right" secondItem="EyY-n3-82U" secondAttribute="right" id="Zjp-JF-MWC"/>
                                                                                             <constraint firstItem="JeP-eq-VKh" firstAttribute="top" secondItem="RzY-2O-Y2i" secondAttribute="top" id="abw-KV-aOW"/>
                                                                                             <constraint firstAttribute="bottom" secondItem="jOp-rg-KUF" secondAttribute="bottom" id="ohy-fR-TAW"/>
+                                                                                            <constraint firstItem="CFc-AR-qoU" firstAttribute="top" secondItem="RzY-2O-Y2i" secondAttribute="top" id="pYb-hv-hfA"/>
                                                                                             <constraint firstAttribute="bottom" secondItem="EyY-n3-82U" secondAttribute="bottom" id="yZB-jy-7w8"/>
                                                                                         </constraints>
                                                                                     </view>
@@ -3064,7 +3071,7 @@
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                                                                 <connections>
-                                                                                                    <outlet property="nextResponderField" destination="JeP-eq-VKh" id="yn9-O7-ZeL"/>
+                                                                                                    <outlet property="nextResponderField" destination="qJf-ZT-ScW" id="Hsj-eb-yB2"/>
                                                                                                 </connections>
                                                                                             </textField>
                                                                                         </subviews>
@@ -3105,7 +3112,7 @@
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                                                                 <connections>
-                                                                                                    <outlet property="nextResponderField" destination="4Ex-1d-osw" id="rse-pG-eYA"/>
+                                                                                                    <outlet property="nextResponderField" destination="aVz-uE-usp" id="0KM-fU-ruT"/>
                                                                                                 </connections>
                                                                                             </textField>
                                                                                         </subviews>
@@ -3146,7 +3153,7 @@
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                                                                 <connections>
-                                                                                                    <outlet property="nextResponderField" destination="qJf-ZT-ScW" id="pgm-4V-G1o"/>
+                                                                                                    <outlet property="nextResponderField" destination="pRe-gd-wac" id="FOF-yi-r89"/>
                                                                                                 </connections>
                                                                                             </textField>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ii4-mg-lMR">
@@ -3219,6 +3226,13 @@
                                                                                     <constraint firstAttribute="width" constant="1" id="RYL-OS-mq4"/>
                                                                                 </constraints>
                                                                             </view>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DtT-Zd-n4x">
+                                                                                <rect key="frame" x="36.5" y="-0.5" width="1" height="100"/>
+                                                                                <color key="backgroundColor" red="0.0001056488904" green="0.71033031089999998" blue="0.0001638976207" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="1" id="OQJ-v5-ehA"/>
+                                                                                </constraints>
+                                                                            </view>
                                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="yFS-8e-fkK">
                                                                                 <rect key="frame" x="8" y="35" width="59" height="31"/>
                                                                                 <constraints>
@@ -3236,9 +3250,12 @@
                                                                             <constraint firstAttribute="bottom" secondItem="dmz-na-0Zy" secondAttribute="bottom" id="5w9-WS-GQg"/>
                                                                             <constraint firstAttribute="right" secondItem="dmz-na-0Zy" secondAttribute="right" id="Cbv-Ze-PnU"/>
                                                                             <constraint firstItem="yFS-8e-fkK" firstAttribute="left" secondItem="nis-Ly-09k" secondAttribute="left" constant="8" id="H5m-0Q-ZAM"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="DtT-Zd-n4x" secondAttribute="trailing" id="QfP-gp-gbc"/>
                                                                             <constraint firstItem="yFS-8e-fkK" firstAttribute="centerY" secondItem="nis-Ly-09k" secondAttribute="centerY" id="Vlc-0w-uPv"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="DtT-Zd-n4x" secondAttribute="bottom" id="Ywr-3q-xYS"/>
                                                                             <constraint firstItem="yFS-8e-fkK" firstAttribute="centerX" secondItem="nis-Ly-09k" secondAttribute="centerX" id="fdI-ht-0lV"/>
                                                                             <constraint firstItem="GYA-m4-UCN" firstAttribute="top" secondItem="nis-Ly-09k" secondAttribute="top" id="gBz-la-a5v"/>
+                                                                            <constraint firstItem="DtT-Zd-n4x" firstAttribute="top" secondItem="nis-Ly-09k" secondAttribute="top" id="hhJ-gd-8SK"/>
                                                                             <constraint firstAttribute="bottom" secondItem="GYA-m4-UCN" secondAttribute="bottom" id="j9G-No-3aO"/>
                                                                             <constraint firstItem="dmz-na-0Zy" firstAttribute="left" secondItem="nis-Ly-09k" secondAttribute="left" id="nqS-BE-guL"/>
                                                                             <constraint firstItem="GYA-m4-UCN" firstAttribute="leading" secondItem="nis-Ly-09k" secondAttribute="leading" id="xwX-cG-5Wg"/>
