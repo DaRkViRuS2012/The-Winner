@@ -14,10 +14,10 @@ protocol Tarneeb41Delegate {
 
 class Tarneeb41Cell: UICollectionViewCell {
 
-    @IBOutlet weak var firstPlayerTF: XUITextField!
-    @IBOutlet weak var secondPlayerTF: XUITextField!
-    @IBOutlet weak var thirdPlayerTF: XUITextField!
-    @IBOutlet weak var forthPlayerTF: XUITextField!
+    @IBOutlet weak var firstPlayerTF: UILabel!
+    @IBOutlet weak var secondPlayerTF: UILabel!
+    @IBOutlet weak var thirdPlayerTF: UILabel!
+    @IBOutlet weak var forthPlayerTF: UILabel!
     @IBOutlet weak var firstPlayerLabel: UILabel!
     @IBOutlet weak var secondPlayerLabel: UILabel!
     @IBOutlet weak var thirdPlayerLabel: UILabel!

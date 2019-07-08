@@ -82,6 +82,33 @@ class TrexGroupViewController:  AbstractController {
         }
     }
     
+    var firstLapResult:Int = 0 {
+        didSet{
+            self.lap1FPResultLabel.text = "\(firstLapResult)"
+        }
+    }
+    
+    var secondLapResult:Int = 0 {
+        didSet{
+            self.lap2FPResultLabel.text = "\(secondLapResult)"
+        }
+    }
+    
+    
+    var thirdLapResult:Int = 0 {
+        didSet{
+            self.lap3FPResultLabel.text = "\(thirdLapResult)"
+        }
+    }
+    
+    
+    var forthLapResult:Int = 0 {
+        didSet{
+            self.lap4FPResultLabel.text = "\(forthLapResult)"
+        }
+    }
+    
+    
   
     var trexNumbers:[String] = ["-","350","300","250","200","150"]
     var banatDoubleNumber:[String] = ["0","-25","-50","-75","-100","-125","-150","-175","-200","25","50","75","100"]
@@ -171,45 +198,84 @@ class TrexGroupViewController:  AbstractController {
         getResult()
         
         NotificationCenter.default.addObserver(self, selector: #selector(getResult), name: .UITextViewTextDidChange, object: nil)
+        self.hideTabBar()
     }
     
     deinit {
           NotificationCenter.default.removeObserver(self, name: .UITextViewTextDidChange, object: nil)
     }
     
+    
+    override func backButtonAction(_ sender: AnyObject) {
+        let alert = UIAlertController(title: "خروج؟", message: "لن تستطيع مشاهدة النتائج مرة اخرى", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "حسنا", style: .default) { (_) in
+            self.tabBarController?.tabBar.isHidden = false
+            self.popOrDismissViewControllerAnimated(animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "الغاء", style: .cancel) { (_) in
+            
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @objc func getResult() {
         
         var res1 = 0
+        var res2 = 0
+        var res3 = 0
+        var res4 = 0
         
-        res1 += lap1FPTrexTF.result + lap1FPBanatTF.result + (lap1FPDenariTF.result * -10) + (lap1FPLatshTF.result * -15) + lap1FPKhetiarTF.result
-        res1 += lap2FPTrexTF.result + lap2FPBanatTF.result + (lap2FPDenariTF.result * -10) + (lap2FPLatshTF.result * -15) + lap2FPKhetiarTF.result
-        res1 += lap3FPTrexTF.result + lap3FPBanatTF.result + (lap3FPDenariTF.result * -10) + (lap3FPLatshTF.result * -15) + lap3FPKhetiarTF.result
-        res1 += lap4FPTrexTF.result + lap4FPBanatTF.result + (lap4FPDenariTF.result * -10) + (lap4FPLatshTF.result * -15) + lap4FPKhetiarTF.result
-        firstPlayerResult = res1
+        res1 = lap1FPTrexTF.result + lap1FPBanatTF.result + (lap1FPDenariTF.result * -10) + (lap1FPLatshTF.result * -15) + lap1FPKhetiarTF.result
+        firstLapResult = res1
+        
+        res2 = lap2FPTrexTF.result + lap2FPBanatTF.result + (lap2FPDenariTF.result * -10) + (lap2FPLatshTF.result * -15) + lap2FPKhetiarTF.result
+        
+        secondLapResult = res2
+        if res2 > 0 {
+            secondLapResult = res1 + res2
+        }
+        
+        res3 = lap3FPTrexTF.result + lap3FPBanatTF.result + (lap3FPDenariTF.result * -10) + (lap3FPLatshTF.result * -15) + lap3FPKhetiarTF.result
+        thirdLapResult = res3
+        if res3 > 0 {
+            thirdLapResult = res1 + res2 + res3
+        }
         
         
-        lap1FPTrexResultLabel.text =  "\(lap1FPTrexTF.result)"
-        lap1FPBanatResultLabel.text = "\(lap1FPBanatTF.result)"
-        lap1FPDenariResultLabel.text = "\(lap1FPDenariTF.result * -10)"
-        lap1FPLatshResultLabel.text = "\(lap1FPLatshTF.result * -15)"
+        res4 = lap4FPTrexTF.result + lap4FPBanatTF.result + (lap4FPDenariTF.result * -10) + (lap4FPLatshTF.result * -15) + lap4FPKhetiarTF.result
+        forthLapResult = res4
+        if res4 > 0 {
+            forthLapResult = res1 + res2 + res3 + res4
+        }
+//        firstPlayerResult = res1
+        
+        
+        lap1FPTrexResultLabel.text    = "\(lap1FPTrexTF.result)"
+        lap1FPBanatResultLabel.text   = "\(lap1FPBanatTF.result)"
+        lap1FPDenariResultLabel.text  = "\(lap1FPDenariTF.result * -10)"
+        lap1FPLatshResultLabel.text   = "\(lap1FPLatshTF.result * -15)"
         lap1FPKhetiarResultLabel.text = "\(lap1FPKhetiarTF.result)"
         
   
-        lap2FPTrexResultLabel.text =    "\(lap2FPTrexTF.result)"
-        lap2FPBanatResultLabel.text =   "\(lap2FPBanatTF.result)"
-        lap2FPDenariResultLabel.text =  "\(lap2FPDenariTF.result * -10)"
-        lap2FPLatshResultLabel.text =   "\(lap2FPLatshTF.result * -15)"
+        lap2FPTrexResultLabel.text    = "\(lap2FPTrexTF.result)"
+        lap2FPBanatResultLabel.text   = "\(lap2FPBanatTF.result)"
+        lap2FPDenariResultLabel.text  = "\(lap2FPDenariTF.result * -10)"
+        lap2FPLatshResultLabel.text   = "\(lap2FPLatshTF.result * -15)"
         lap2FPKhetiarResultLabel.text = "\(lap2FPKhetiarTF.result)"
         
         
-        lap3FPTrexResultLabel.text   =  "\(lap3FPTrexTF.result)"
+        lap3FPTrexResultLabel.text    = "\(lap3FPTrexTF.result)"
         lap3FPBanatResultLabel.text   = "\(lap3FPBanatTF.result)"
         lap3FPDenariResultLabel.text  = "\(lap3FPDenariTF.result * -10)"
         lap3FPLatshResultLabel.text   = "\(lap3FPLatshTF.result * -15)"
         lap3FPKhetiarResultLabel.text = "\(lap3FPKhetiarTF.result)"
         
         
-        lap4FPTrexResultLabel.text   =  "\(lap4FPTrexTF.result)"
+        lap4FPTrexResultLabel.text    = "\(lap4FPTrexTF.result)"
         lap4FPBanatResultLabel.text   = "\(lap4FPBanatTF.result)"
         lap4FPDenariResultLabel.text  = "\(lap4FPDenariTF.result * -10)"
         lap4FPLatshResultLabel.text   = "\(lap4FPLatshTF.result * -15)"
@@ -218,16 +284,27 @@ class TrexGroupViewController:  AbstractController {
     }
     
     @IBAction func done(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        self.popOrDismissViewControllerAnimated(animated: true)
     }
     
     @IBAction func showResult(_ sender: UIButton) {
         self.firstPlayerNameLabel.text = DataStore.shared.currentGame?.players[0].name
-    
-        self.firstPlayerResultLabel.text = "\(self.firstPlayerResult)"
+        let res = firstLapResult + secondLapResult + thirdLapResult + forthLapResult
+        self.firstPlayerResultLabel.text = "\(res)"
         
-        self.resultOverlayView.isHidden = false
-        self.resultView.animateIn(mode: .animateInFromBottom, delay: 0.2)
+        let alert = UIAlertController(title: "انهاء اللعبة؟", message: "لن تستطيع مشاهدة النتائج مرة اخرى", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "حسنا", style: .default) { (_) in
+            self.resultOverlayView.isHidden = false
+            self.resultView.animateIn(mode: .animateInFromBottom, delay: 0.2)
+        }
+        let cancelAction = UIAlertAction(title: "الغاء", style: .cancel) { (_) in
+            
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

@@ -56,7 +56,7 @@ class TarneebViewViewController: AbstractController {
         
         let nib = UINib(nibName: cellId, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellId)
-        self.tabBarController?.hidesBottomBarWhenPushed = true
+    
         setResult()
         firstPlayerNameLabel.text = DataStore.shared.currentGame?.players[0].name
         secondPlayerNameLabel.text = DataStore.shared.currentGame?.players[1].name
@@ -70,8 +70,32 @@ class TarneebViewViewController: AbstractController {
             self.firstTeamButton.setTitle(DataStore.shared.currentGame?.players[0].name, for: .normal)
             self.secondTeemButton.setTitle(DataStore.shared.currentGame?.players[1].name, for: .normal)
         }
+//        self.tabBarController?.tabBar.isHidden = true
+        self.hideTabBar()
     }
     
+    override func backButtonAction(_ sender: AnyObject) {
+        let alert = UIAlertController(title: "خروج؟", message: "لن تستطيع مشاهدة النتائج مرة اخرى", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "حسنا", style: .default) { (_) in
+            self.tabBarController?.tabBar.isHidden = false
+            self.popOrDismissViewControllerAnimated(animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "الغاء", style: .cancel) { (_) in
+
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func closeButtonAction(_ sender: AnyObject) {
+        self.hideTarneeb41()
+        self.hideTarneeb61()
+        self.showNavCloseButton = false
+        self.showNavBackButton = true
+    }
     
     func setResult(){
         firstPlayerResultLabel.text = "\(DataStore.shared.currentGame?.players[0].getResult() ?? 0)"
@@ -88,33 +112,33 @@ class TarneebViewViewController: AbstractController {
     func validateTarneeb41Lap()->Bool{
         let lap = Lap()
         lap.players = [Player(name:""),Player(name:""),Player(name:""),Player(name:"")]
-        if let firstPlayer = tarneeb41FPTF.text , !firstPlayer.isEmpty,let resut = Int(firstPlayer){
+        if let firstPlayer = tarneeb41FPTF.text , !firstPlayer.isEmpty,let resut = Int(firstPlayer) ,resut <= 13{
             lap.players[0].result = (resut >= 5) ? resut * 2 : resut
         }else{
-            self.showMessage(message:"الرجاء ادخال كافة النتائج", type: .error)
+            self.showMessage(message:"الرجاء ادخال كافة النتائج من ١ ال ١٣ ", type: .error)
             return false
         }
         
-        if let firstPlayer = tqrneeb41SPTF.text , !firstPlayer.isEmpty,let resut = Int(firstPlayer){
+        if let firstPlayer = tqrneeb41SPTF.text , !firstPlayer.isEmpty,let resut = Int(firstPlayer),resut <= 13{
             lap.players[1].result = resut >= 5 ? resut * 2 : resut
             
         }else{
-            self.showMessage(message: "الرجاء ادخال كافة النتائج", type: .error)
+            self.showMessage(message: "الرجاء ادخال كافة النتائج من ١ ال ١٣ ", type: .error)
             return false
         }
         
-        if let firstPlayer = tarneeb41TPTF.text , !firstPlayer.isEmpty,let resut = Int(firstPlayer){
+        if let firstPlayer = tarneeb41TPTF.text , !firstPlayer.isEmpty,let resut = Int(firstPlayer),resut <= 13{
             lap.players[2].result = resut >= 5 ? resut * 2 : resut
         }else{
-            self.showMessage(message: "الرجاء ادخال كافة النتائج", type: .error)
+            self.showMessage(message: "الرجاء ادخال كافة النتائج من ١ ال ١٣ ", type: .error)
             return false
         }
         
-        if let firstPlayer = tarneeb41FTPTF.text , !firstPlayer.isEmpty,let resut = Int(firstPlayer){
+        if let firstPlayer = tarneeb41FTPTF.text , !firstPlayer.isEmpty,let resut = Int(firstPlayer),resut <= 13{
             lap.players[3].result = resut >= 5 ? resut * 2 : resut
             
         }else{
-            self.showMessage(message: "الرجاء ادخال كافة النتائج", type: .error)
+            self.showMessage(message: "الرجاء ادخال كافة النتائج من ١ ال ١٣ ", type: .error)
             return false
         }
         
@@ -183,6 +207,7 @@ class TarneebViewViewController: AbstractController {
         self.tarneeb41ResultView.isHidden = false
         self.tarneeb41ContentView.isHidden = false
         self.tarneeb41ContentView.animateIn(mode: .animateInFromBottom, delay: 0.2)
+        self.showNavCloseButton = true
     }
     
     func hideTarneeb41(){
@@ -196,6 +221,7 @@ class TarneebViewViewController: AbstractController {
         tarneeb41TPSC.selectedSegmentIndex = -1
         tarneeb41FTPSC.selectedSegmentIndex = -1
         self.view.endEditing(true)
+        self.showNavBackButton = true
     }
 
     @IBAction func handelTarneeb41Lap(_ sender: UIButton) {
@@ -219,8 +245,9 @@ class TarneebViewViewController: AbstractController {
         if isFirstTeam{
             if let num = selectedNumber{
                 if let val = tarneeb61ResultTF.text , !val.isEmpty , let res =  Int(val){
+                    if res <= 13 {
                     if res >= num{
-                        lap.players[0].setResult(res: num)
+                        lap.players[0].setResult(res: res)
                         lap.players[1].setResult(res: 0)
                     }else{
                         lap.players[0].setResult(res: -num)
@@ -228,9 +255,15 @@ class TarneebViewViewController: AbstractController {
                     }
                     
                 }else{
-                    self.showMessage(message:"يرجى ادخال عدد الاكلات", type: .error)
+                    self.showMessage(message:"عدد الاكلات لا يمكن ان يتجاوز 13", type: .error)
                     return false
-                }
+                    }
+                    
+                }else{
+                        self.showMessage(message:"يرجى ادخال عدد الاكلات", type: .error)
+                        return false
+                    }
+                
                 
             }else{
                 self.showMessage(message:"يرجى تحديد الطلب", type: .error)
@@ -239,12 +272,18 @@ class TarneebViewViewController: AbstractController {
         }else if isSecondTeam{
             if let num = selectedNumber{
                 if let val = tarneeb61ResultTF.text , !val.isEmpty , let res =  Int(val){
+                    if res <= 13 {
                     if res >= num{
-                        lap.players[1].setResult(res: num)
+                        lap.players[1].setResult(res: res)
                         lap.players[0].setResult(res: 0)
                     }else{
                         lap.players[1].setResult(res: -num)
                         lap.players[0].setResult(res: 13 - res)
+                        }
+                        
+                    }else{
+                        self.showMessage(message:"عدد الاكلات لا يمكن ان يتجاوز 13", type: .error)
+                        return false
                     }
                 }else{
                     self.showMessage(message:"يرجى ادخال عدد الاكلات", type: .error)
@@ -272,6 +311,7 @@ class TarneebViewViewController: AbstractController {
         self.tarneeb61View.isHidden = false
         self.tarneeb61ContentView.isHidden = false
         self.tarneeb61ContentView.animateIn(mode: .animateInFromBottom, delay: 0.2)
+        self.showNavCloseButton = true
     }
     
     func hideTarneeb61(){
@@ -285,6 +325,7 @@ class TarneebViewViewController: AbstractController {
         self.isFirstTeam = false
         self.isSecondTeam = false
         self.view.endEditing(true)
+        self.showNavBackButton = true
     }
     
     @IBAction func handelTarneeb61Lap(_ sender: UIButton) {
@@ -322,7 +363,14 @@ class TarneebViewViewController: AbstractController {
         }
     }
     
-
+    @IBAction func addLap(_ sender: UIButton) {
+        if let type = DataStore.shared.currentGame?.type , type == .tarneb41{
+            self.showTarneeb41()
+        }else{
+            showTarneeb61()
+        }
+    }
+    
 }
 
 extension TarneebViewViewController:UICollectionViewDelegate,UICollectionViewDataSource{
@@ -332,19 +380,15 @@ extension TarneebViewViewController:UICollectionViewDelegate,UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return laps.count + 1
+        return laps.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! Tarneeb41Cell
-        if indexPath.item < laps.count{
-            cell.isUserInteractionEnabled = false
-            cell.lap = self.laps[indexPath.item]
-            cell.alpha = 0.5
-        }else{
-          cell.isUserInteractionEnabled = true
-          cell.alpha = 1
-        }
+        
+        cell.isUserInteractionEnabled = false
+        cell.lap = self.laps[indexPath.item]
+        cell.alpha = 0.5
         cell.delegate = self
         return cell
     }
@@ -361,10 +405,6 @@ extension TarneebViewViewController:UICollectionViewDelegateFlowLayout{
 extension TarneebViewViewController:Tarneeb41Delegate{
     func addNewLap(firstPlayer: Int, secondPlayer: Int, thirdPlayer: Int, forthPlayer: Int) {
         
-        if let type = DataStore.shared.currentGame?.type , type == .tarneb41{
-            self.showTarneeb41()
-        }else{
-            showTarneeb61()
-        }
+       
     }
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		141789A422B75E0B00601A0F /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141789A322B75E0B00601A0F /* GamesViewController.swift */; };
 		141789A622B788E700601A0F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141789A522B788E700601A0F /* Game.swift */; };
+		1456FA8A22D09FA200423F66 /* FooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1456FA8922D09FA200423F66 /* FooterCell.xib */; };
+		1456FA8C22D09FD200423F66 /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456FA8B22D09FD200423F66 /* FooterCell.swift */; };
 		147E1DC42299C1F5008501B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147E1DC32299C1F5008501B2 /* AppDelegate.swift */; };
 		147E1DC62299C1F5008501B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147E1DC52299C1F5008501B2 /* ViewController.swift */; };
 		147E1DC92299C1F5008501B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147E1DC72299C1F5008501B2 /* Main.storyboard */; };
@@ -108,6 +110,8 @@
 /* Begin PBXFileReference section */
 		141789A322B75E0B00601A0F /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
 		141789A522B788E700601A0F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		1456FA8922D09FA200423F66 /* FooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterCell.xib; sourceTree = "<group>"; };
+		1456FA8B22D09FD200423F66 /* FooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCell.swift; sourceTree = "<group>"; };
 		147E1DC02299C1F5008501B2 /* The Winner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Winner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		147E1DC32299C1F5008501B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		147E1DC52299C1F5008501B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -467,6 +471,8 @@
 				14DAEDA822ABEB3F007F8C2D /* OfferCell.xib */,
 				14E7590722C0F9D800853864 /* LekhaCell.swift */,
 				14E7590822C0F9D800853864 /* LekhaCell.xib */,
+				1456FA8B22D09FD200423F66 /* FooterCell.swift */,
+				1456FA8922D09FA200423F66 /* FooterCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -561,6 +567,7 @@
 				147E1DEF2299C4CD008501B2 /* CairoSemiBold.ttf in Resources */,
 				147E1DF42299C4CD008501B2 /* Cairo-Bold.ttf in Resources */,
 				147E1DF82299C4CD008501B2 /* OpenSansSemiBold.ttf in Resources */,
+				1456FA8A22D09FA200423F66 /* FooterCell.xib in Resources */,
 				147E1DCE2299C1FA008501B2 /* LaunchScreen.storyboard in Resources */,
 				147E1F052299D2F3008501B2 /* CityCell.xib in Resources */,
 				147E1DF12299C4CD008501B2 /* Cairo-Regular.ttf in Resources */,
@@ -669,6 +676,7 @@
 				14B9CAB222C85CBB00651F3F /* TrexGroupViewController.swift in Sources */,
 				147E1EB22299C4FF008501B2 /* UIViewController.swift in Sources */,
 				147E1E872299C4FF008501B2 /* ApiManager.swift in Sources */,
+				1456FA8C22D09FD200423F66 /* FooterCell.swift in Sources */,
 				147E1EA32299C4FF008501B2 /* UIBarItemButton.swift in Sources */,
 				147E1EBE2299C4FF008501B2 /* LocationHelper.swift in Sources */,
 				147E1DFB2299C4CD008501B2 /* AppFonts.swift in Sources */,

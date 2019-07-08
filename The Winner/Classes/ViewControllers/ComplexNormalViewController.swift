@@ -95,37 +95,25 @@ class ComplexNormalViewController: AbstractController {
     
     var firstPlayerResult:Int = 0 {
         didSet{
-            self.lap1FPResultLabel.text = "\(firstPlayerResult)"
-            self.lap2FPResultLabel.text = "\(firstPlayerResult)"
-            self.lap3FPResultLabel.text = "\(firstPlayerResult)"
-            self.lap4FPResultLabel.text = "\(firstPlayerResult)"
+          
         }
     }
     
     var secondPlayerResult:Int = 0 {
         didSet{
-            self.lap1SPResultLabel.text = "\(secondPlayerResult)"
-            self.lap2SPResultLabel.text = "\(secondPlayerResult)"
-            self.lap3SPResultLabel.text = "\(secondPlayerResult)"
-            self.lap4SPResultLabel.text = "\(secondPlayerResult)"
+        
         }
     }
     
     var thirdPlayerResult:Int = 0 {
         didSet{
-            self.lap1TPResultLabel.text = "\(thirdPlayerResult)"
-            self.lap2TPResultLabel.text = "\(thirdPlayerResult)"
-            self.lap3TPResultLabel.text = "\(thirdPlayerResult)"
-            self.lap4TPResultLabel.text = "\(thirdPlayerResult)"
+            
         }
     }
     
     var forthPlayerResult:Int = 0 {
         didSet{
-            self.lap1FTPResultLabel.text = "\(forthPlayerResult)"
-            self.lap2FTPResultLabel.text = "\(forthPlayerResult)"
-            self.lap3FTPResultLabel.text = "\(forthPlayerResult)"
-            self.lap4FTPResultLabel.text = "\(forthPlayerResult)"
+            
         }
     }
     
@@ -163,11 +151,29 @@ class ComplexNormalViewController: AbstractController {
         self.setNavBarTitle(title: "تركس كومبلكس")
         self.showNavBackButton = true
         NotificationCenter.default.addObserver(self, selector: #selector(getResult(_:)), name: .UITextViewTextDidChange, object: nil)
+        self.hideTabBar()
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: .UITextViewTextDidChange, object: nil)
     }
+    
+    override func backButtonAction(_ sender: AnyObject) {
+        let alert = UIAlertController(title: "خروج؟", message: "لن تستطيع مشاهدة النتائج مرة اخرى", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "حسنا", style: .default) { (_) in
+            self.tabBarController?.tabBar.isHidden = false
+            self.popOrDismissViewControllerAnimated(animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "الغاء", style: .cancel) { (_) in
+            
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func getResult(_ sender: Any) {
     
         var res1 = 0
@@ -175,34 +181,64 @@ class ComplexNormalViewController: AbstractController {
         var res3 = 0
         var res4 = 0
         
-        res1 += lap1FPTrexTF.result + lap1FPComplexTF.result
+        res1 = lap1FPTrexTF.result + lap1FPComplexTF.result
+        self.lap1FPResultLabel.text = "\(res1)"
         res1 += lap2FPTrexTF.result + lap2FPComplexTF.result
+        self.lap2FPResultLabel.text = "\(res1)"
         res1 += lap3FPTrexTF.result + lap3FPComplexTF.result
+        self.lap3FPResultLabel.text = "\(res1)"
         res1 += lap4FPTrexTF.result + lap4FPComplexTF.result
+        self.lap4FPResultLabel.text = "\(res1)"
         firstPlayerResult = res1
         
-        res2 += lap1SPTrexTF.result + lap1SPComplexTF.result
+        
+        
+        
+        
+        
+        res2 = lap1SPTrexTF.result + lap1SPComplexTF.result
+        self.lap1SPResultLabel.text = "\(res2)"
         res2 += lap2SPTrexTF.result + lap2SPComplexTF.result
+        self.lap2SPResultLabel.text = "\(res2)"
         res2 += lap3SPTrexTF.result + lap3SPComplexTF.result
+        self.lap3SPResultLabel.text = "\(res2)"
         res2 += lap4SPTrexTF.result + lap4SPComplexTF.result
+        self.lap4SPResultLabel.text = "\(res2)"
         secondPlayerResult = res2
         
-        res3 += lap1TPTrexTF.result + lap1TPComplexTF.result
+        
+        
+        
+        
+        res3 = lap1TPTrexTF.result + lap1TPComplexTF.result
+        self.lap1TPResultLabel.text = "\(res3)"
         res3 += lap2TPTrexTF.result + lap2TPComplexTF.result
+        self.lap2TPResultLabel.text = "\(res3)"
         res3 += lap3TPTrexTF.result + lap3TPComplexTF.result
+        self.lap3TPResultLabel.text = "\(res3)"
         res3 += lap4TPTrexTF.result + lap4TPComplexTF.result
+        self.lap4TPResultLabel.text = "\(res3)"
         thirdPlayerResult = res3
         
-        res4 += lap1FTPTrexTF.result + lap1FTPComplexTF.result
+        
+        
+        
+        
+        
+        res4 = lap1FTPTrexTF.result + lap1FTPComplexTF.result
+        self.lap2FTPResultLabel.text = "\(res4)"
         res4 += lap2FTPTrexTF.result + lap2FTPComplexTF.result
+        self.lap2FTPResultLabel.text = "\(res4)"
         res4 += lap3FTPTrexTF.result + lap3FTPComplexTF.result
+        self.lap3FTPResultLabel.text = "\(res4)"
         res4 += lap4FTPTrexTF.result + lap4FTPComplexTF.result
+        self.lap4FTPResultLabel.text = "\(res4)"
         forthPlayerResult = res4
     
     }
     
     @IBAction func done(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        self.popOrDismissViewControllerAnimated(animated: true)
     }
     
     @IBAction func showResult(_ sender: UIButton) {
@@ -216,8 +252,21 @@ class ComplexNormalViewController: AbstractController {
         self.thirdPlayerResultLabel.text = "\(self.thirdPlayerResult)"
         self.forthPlayerResultLabel.text = "\(self.forthPlayerResult)"
         
-        self.resultOverlayView.isHidden = false
-        self.resultView.animateIn(mode: .animateInFromBottom, delay: 0.2)
+        let alert = UIAlertController(title: "انهاء اللعبة؟", message: "لن تستطيع مشاهدة النتائج مرة اخرى", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "حسنا", style: .default) { (_) in
+            self.resultOverlayView.isHidden = false
+            self.resultView.animateIn(mode: .animateInFromBottom, delay: 0.2)
+        }
+        let cancelAction = UIAlertAction(title: "الغاء", style: .cancel) { (_) in
+            
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+        
+     
     }
  
     func textFieldDidBeginEditing(_ textField: UITextField) {

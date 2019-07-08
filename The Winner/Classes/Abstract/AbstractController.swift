@@ -95,7 +95,7 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
     /// Navigation bar custome close button
     var navCloseButton : UIBarButtonItem {
         let _navCloseButton = UIButton()
-        _navCloseButton.setBackgroundImage(UIImage(named: "navClose"), for: .normal)
+        _navCloseButton.setBackgroundImage(UIImage(named: "navCloseWhite"), for: .normal)
         _navCloseButton.frame = CGRect(x: 0, y: 0, width: 17, height: 17)
         _navCloseButton.addTarget(self, action: #selector(closeButtonAction(_:)), for: .touchUpInside)
         return UIBarButtonItem(customView: _navCloseButton)
@@ -401,6 +401,7 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
     
     @objc  func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        
         view.endEditing(true)
     }
     
@@ -426,6 +427,15 @@ class AbstractController: UIViewController, UITextFieldDelegate, UIGestureRecogn
     func callPhone(phone:String){
         guard let number = URL(string: "tel://" + phone) else { return }
         UIApplication.shared.openURL(number)
+    }
+    
+    
+    func hideTabBar(){
+        self.tabBarController?.tabBar.layer.zPosition = -1
+    }
+    
+    func showTabBar(){
+        self.tabBarController?.tabBar.layer.zPosition = 0
     }
 }
 

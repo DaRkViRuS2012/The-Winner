@@ -23,7 +23,6 @@ class XUITextField:NextResponderTextField{
                     self.keyboardType = UIKeyboardType.numberPad
                 }
                 
-                
                 self.textAlignment = .center
                 self.languageCode = "en"
                 self.contentVerticalAlignment = .center
@@ -55,7 +54,8 @@ class XUITextField:NextResponderTextField{
     
     fileprivate func getAccessoryButtons() -> UIView
     {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.superview!.frame.size.width, height: 44))
+        let v = UIApplication.visibleViewController()?.view
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: v?.frame.size.width ?? self.superview!.frame.width, height: 44))
         view.backgroundColor = UIColor.lightGray
         
         let minusButton = UIButton(type: UIButton.ButtonType.custom)
@@ -86,21 +86,25 @@ class XUITextField:NextResponderTextField{
             } else {
                 self.text = "-" + text
             }
-           NotificationCenter.default.post(name: .UITextViewTextDidChange, object: nil)
+           
+        }else{
+            self.text = "-"
         }
+        NotificationCenter.default.post(name: .UITextViewTextDidChange, object: nil)
     }
     
  
     
     @objc func doneTouchUpInside(_ sender: UIButton!) {
         _ = self.resignFirstResponder();
+        self.nextResponderField?.becomeFirstResponder()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        if primary{
+//        if primary{
             self.inputAccessoryView = getAccessoryButtons()
-        }
+//        }
         
     }
 
@@ -167,7 +171,7 @@ class XUITextField:NextResponderTextField{
     fileprivate var defaultMode = true
     
     /// The text's margin left manually set by the user.
-    fileprivate var textMarginLeft: CGFloat = 10.0
+    fileprivate var textMarginLeft: CGFloat = 0.0
     
     /// The text's margin right manually set by the user.
     fileprivate var textMarginRight: CGFloat = 0.0

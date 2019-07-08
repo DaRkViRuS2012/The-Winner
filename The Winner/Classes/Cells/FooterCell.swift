@@ -1,23 +1,19 @@
 //
-//  LekhaCell.swift
+//  FooterCell.swift
 //  The Winner
 //
-//  Created by Nour  on 6/24/19.
+//  Created by Nour  on 7/6/19.
 //  Copyright © 2019 Nour . All rights reserved.
 //
 
 import UIKit
 
-protocol LekhaDelegate {
-    func addNewLap(firstPlayer:Int,secondPlayer:Int,thirdPlayer:Int,forthPlayer:Int)
-}
-
-class LekhaCell: UICollectionViewCell {
-    @IBOutlet weak var firstPlayerTF: UILabel!
-    @IBOutlet weak var secondPlayerTF: UILabel!
-    @IBOutlet weak var thirdPlayerTF: UILabel!
-    @IBOutlet weak var forthPlayerTF: UILabel!
+class FooterCell: UICollectionReusableView {
     
+    @IBOutlet weak var firstPlayerTF: XUITextField!
+    @IBOutlet weak var secondPlayerTF: XUITextField!
+    @IBOutlet weak var thirdPlayerTF: XUITextField!
+    @IBOutlet weak var forthPlayerTF: XUITextField!
     @IBOutlet weak var forthPlayerNameLabel: UILabel!
     @IBOutlet weak var thirdPlayerNameLabel: UILabel!
     @IBOutlet weak var secondPlayerNameLabel: UILabel!
@@ -25,31 +21,23 @@ class LekhaCell: UICollectionViewCell {
     
     var delegate:LekhaDelegate?
     
-    var lap :Lap?{
-        didSet{
-            guard let lap = lap else {return}
-            
-            self.firstPlayerTF.text = "\(lap.players[0].getResult())"
-            self.firstPlayerTF.isEnabled = false
-            
-            self.secondPlayerTF.text = "\(lap.players[1].getResult())"
-            self.secondPlayerTF.isEnabled = false
-            if DataStore.shared.currentGame!.numberOfPlayers > 2{
-                self.thirdPlayerTF.text = "\(lap.players[2].getResult())"
-                self.thirdPlayerTF.isEnabled = false
-                if DataStore.shared.currentGame!.numberOfPlayers > 3{
-                    self.forthPlayerTF.text = "\(lap.players[3].getResult())"
-                    self.forthPlayerTF.isEnabled = false
-                }
-            }
-            isUserInteractionEnabled = false
-            self.alpha = 0.5
-        }
-    }
+   
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        initilaize()
+        
+        
+    }
+    
+    
+    func initilaize(){
+        
+        firstPlayerTF.text = nil
+        secondPlayerTF.text = nil
+        thirdPlayerTF.text = nil
+        forthPlayerTF.text = nil
         if DataStore.shared.currentGame?.numberOfPlayers == 4{
             firstPlayerTF.isHidden = false
             secondPlayerTF.isHidden = false
@@ -85,16 +73,12 @@ class LekhaCell: UICollectionViewCell {
             
         }
         
-        
     }
     
     @IBAction func addNew(_ sender: UIButton) {
         if let fResult = firstPlayerTF.text,let sResult = secondPlayerTF.text,let tResult = thirdPlayerTF.text , let ftResult = forthPlayerTF.text , !fResult.isEmpty,!sResult.isEmpty,!tResult.isEmpty,!fResult.isEmpty , let fIntResutl = Int(fResult),let sIntResutl = Int(sResult),let tIntResutl = Int(tResult),let ftIntResutl = Int(ftResult){
             delegate?.addNewLap(firstPlayer: fIntResutl, secondPlayer: sIntResutl, thirdPlayer: tIntResutl, forthPlayer: ftIntResutl)
-            firstPlayerTF.text = nil
-            secondPlayerTF.text = nil
-            thirdPlayerTF.text = nil
-            forthPlayerTF.text = nil
+            initilaize()
         }else{
             (UIApplication.visibleViewController() as! AbstractController).showMessage(message: "الرجاء ادخال النتائج", type: .warning)
         }

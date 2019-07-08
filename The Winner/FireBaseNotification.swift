@@ -200,8 +200,8 @@ extension AppDelegate : MessagingDelegate {
         if let dict = userInfo["aps"] as? NSDictionary{
             print(dict)
             let d : [String : Any] = dict["alert"] as! [String : Any]
-            let body : String = d["body"] as! String
-            let title : String = d["title"] as! String
+            let body : String = d["body"] as? String ?? ""
+            let title : String = d["title"] as? String ?? ""
             print("Title:\(title) + body:\(body)")
             self.showAlertAppDelegate(title: title,message:body,buttonTitle:"ok",window:self.window!)
         }

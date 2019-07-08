@@ -80,11 +80,28 @@ class GamesViewController: AbstractController {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+//        self.showTabBar()
+    }
+    
+    
+    override func closeButtonAction(_ sender: AnyObject) {
+        self.hideLekha(UITapGestureRecognizer())
+        self.hideConcan(UITapGestureRecognizer())
+        self.hideTrexView(UITapGestureRecognizer())
+        self.hideTarneeb41(UITapGestureRecognizer())
+        self.hideTarneeb61(UITapGestureRecognizer())
+        self.hideComplexView(UITapGestureRecognizer())
+        self.showNavCloseButton = false
+    }
+    
     // tarneeb 41
     
     @IBAction func showTareneeb41View(_ sender: UIButton) {
         self.tarneeb41View.isHidden = false
         self.tarneeb41PlayersView.animateIn(mode: .animateInFromBottom, delay: 0.2)
+        self.showNavCloseButton = true
     }
     
     func validateTarneeb41()->Bool{
@@ -125,7 +142,10 @@ class GamesViewController: AbstractController {
             DataStore.shared.currentGame = Game(type: .tarneb41, numberOfPlayers: playersNames.count)
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
             let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "TarneebViewViewController") as! TarneebViewViewController
-            self.navigationController?.pushViewController(vc, animated: true)
+//            self.navigationController?.pushViewController(vc, animated: true)
+            let nav = UINavigationController(rootViewController: vc)
+            //            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(nav, animated: true, completion: nil)
             
         }
     }
@@ -168,6 +188,7 @@ class GamesViewController: AbstractController {
     @IBAction func showTarneeb61View(_ sender: UIButton) {
         self.tarneeb61View.isHidden = false
         self.tarneeb61PlayersView.animateIn(mode: .animateInFromBottom, delay: 0.2)
+        self.showNavCloseButton = true
     }
     
     @IBAction func handelTarneeb61Game(_ sender: UIButton) {
@@ -177,7 +198,10 @@ class GamesViewController: AbstractController {
             DataStore.shared.currentGame = Game(type: .tarneb61, numberOfPlayers: playersNames.count)
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
             let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "TarneebViewViewController") as! TarneebViewViewController
-            self.navigationController?.pushViewController(vc, animated: true)
+//            self.navigationController?.pushViewController(vc, animated: true)
+            let nav = UINavigationController(rootViewController: vc)
+            //            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(nav, animated: true, completion: nil)
         }
     }
     
@@ -218,6 +242,7 @@ class GamesViewController: AbstractController {
     @IBAction func showLekhaView(_ sender: UIButton) {
         self.lekhaView.isHidden = false
         self.lekhaPlayersView.animateIn(mode: .animateInFromBottom, delay: 0.2)
+        self.showNavCloseButton = true
     }
     
     @IBAction func hideLekha(_ sender: UITapGestureRecognizer) {
@@ -236,7 +261,10 @@ class GamesViewController: AbstractController {
             DataStore.shared.currentGame = Game(type: .lekha, numberOfPlayers: playersNames.count)
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
             let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "LekhaViewController") as! LekhaViewController
-            self.navigationController?.pushViewController(vc, animated: true)
+//            self.navigationController?.pushViewController(vc, animated: true)
+            let nav = UINavigationController(rootViewController: vc)
+            //            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(nav, animated: true, completion: nil)
         }
     }
     
@@ -284,6 +312,7 @@ class GamesViewController: AbstractController {
         self.concanPlayersView.isHidden = true
         self.concanNumberOfPlayerView.isHidden = false
         self.concanNumberOfPlayerView.animateIn(mode: .animateInFromBottom, delay: 0.2)
+        self.showNavCloseButton = true
         
     }
     
@@ -330,7 +359,10 @@ class GamesViewController: AbstractController {
             DataStore.shared.currentGame = Game(type: .concan, numberOfPlayers: playersNames.count)
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
             let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "ConcanViewController") as! ConcanViewController
-            self.navigationController?.pushViewController(vc, animated: true)
+//            self.navigationController?.pushViewController(vc, animated: true)
+            let nav = UINavigationController(rootViewController: vc)
+            //            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(nav, animated: true, completion: nil)
         }
     }
     
@@ -391,6 +423,7 @@ class GamesViewController: AbstractController {
         self.complexGroupPlayersView.isHidden = true
         self.complexNormalPlayersView.isHidden = true
         self.complexGameTypeView.animateIn(mode: .animateInFromLeft, delay: 0.2)
+        self.showNavCloseButton = true
     }
     
     @IBAction func hideComplexView(_ sender: UITapGestureRecognizer) {
@@ -435,7 +468,10 @@ class GamesViewController: AbstractController {
             DataStore.shared.currentGame = Game(type: .trexComplex, numberOfPlayers: playersNames.count)
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
             let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "ComplexNormalViewController") as! ComplexNormalViewController
-            self.navigationController?.pushViewController(vc, animated: true)
+//            self.navigationController?.pushViewController(vc, animated: true)
+            let nav = UINavigationController(rootViewController: vc)
+            //            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(nav, animated: true, completion: nil)
         }
     }
     
@@ -446,7 +482,10 @@ class GamesViewController: AbstractController {
             DataStore.shared.currentGame = Game(type: .trexComplex, numberOfPlayers: playersNames.count)
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
             let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "ComplexGroupViewController") as! ComplexGroupViewController
-            self.navigationController?.pushViewController(vc, animated: true)
+//            self.navigationController?.pushViewController(vc, animated: true)
+            let nav = UINavigationController(rootViewController: vc)
+            //            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(nav, animated: true, completion: nil)
         }
     }
     
@@ -512,6 +551,7 @@ class GamesViewController: AbstractController {
         self.trexGroupPlayersView.isHidden = true
         self.trexNormalPlayersView.isHidden = true
         self.trexGameTypeView.animateIn(mode: .animateInFromLeft, delay: 0.2)
+        self.showNavCloseButton = true
     }
     
     @IBAction func hideTrexView(_ sender: UITapGestureRecognizer) {
@@ -557,7 +597,9 @@ class GamesViewController: AbstractController {
             DataStore.shared.currentGame = Game(type: .trex, numberOfPlayers: playersNames.count)
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
             let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "TrexNormalViewController") as! TrexNormalViewController
-            self.navigationController?.pushViewController(vc, animated: true)
+            let nav = UINavigationController(rootViewController: vc)
+            //            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(nav, animated: true, completion: nil)
         }
     }
     
@@ -578,7 +620,9 @@ class GamesViewController: AbstractController {
             hideTrexView(UITapGestureRecognizer())
             DataStore.shared.currentGame?.setPlayersName(playersName: playersNames)
             let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "TrexGroupViewController") as! TrexGroupViewController
-            self.navigationController?.pushViewController(vc, animated: true)
+            let nav = UINavigationController(rootViewController: vc)
+            //            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(nav, animated: true, completion: nil)
         }
     }
     

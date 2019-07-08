@@ -90,54 +90,30 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Scj-gb-oWd">
                                                 <rect key="frame" x="0.0" y="65" width="377" height="65"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4FS-8x-5aA" customClass="XUITextField" customModule="The_Winner" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xca-bm-94s">
                                                         <rect key="frame" x="0.0" y="0.0" width="94.5" height="65"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="primary" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <outlet property="nextResponderField" destination="2uZ-Nn-kt0" id="esi-Uw-jQa"/>
-                                                        </connections>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nFB-4F-DGu" customClass="XUITextField" customModule="The_Winner" customModuleProvider="target">
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1R9-8r-Wy2">
                                                         <rect key="frame" x="94.5" y="0.0" width="94" height="65"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="primary" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <outlet property="nextResponderField" destination="4FS-8x-5aA" id="N14-6a-dKG"/>
-                                                        </connections>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WRb-Fu-Kdv" customClass="XUITextField" customModule="The_Winner" customModuleProvider="target">
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtB-Wr-huR">
                                                         <rect key="frame" x="188.5" y="0.0" width="94.5" height="65"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="primary" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <outlet property="nextResponderField" destination="nFB-4F-DGu" id="rGA-ah-b10"/>
-                                                        </connections>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zsj-xN-7Kb" customClass="XUITextField" customModule="The_Winner" customModuleProvider="target">
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNT-ja-2Fd">
                                                         <rect key="frame" x="283" y="0.0" width="94" height="65"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="primary" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <outlet property="nextResponderField" destination="WRb-Fu-Kdv" id="cAt-kn-xSl"/>
-                                                        </connections>
-                                                    </textField>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -186,13 +162,13 @@
             <size key="customSize" width="417" height="130"/>
             <connections>
                 <outlet property="firstPlayerNameLabel" destination="0P6-M3-GUl" id="tjW-0g-dZ9"/>
-                <outlet property="firstPlayerTF" destination="zsj-xN-7Kb" id="qLl-R4-u4Q"/>
+                <outlet property="firstPlayerTF" destination="pNT-ja-2Fd" id="dCg-81-izj"/>
                 <outlet property="forthPlayerNameLabel" destination="ky3-sz-xPV" id="2f3-E7-oJ9"/>
-                <outlet property="forthPlayerTF" destination="4FS-8x-5aA" id="5Tt-8I-aeN"/>
+                <outlet property="forthPlayerTF" destination="Xca-bm-94s" id="aNf-GO-gaX"/>
                 <outlet property="secondPlayerNameLabel" destination="b5b-7Q-dDT" id="f1Q-eo-MtQ"/>
-                <outlet property="secondPlayerTF" destination="WRb-Fu-Kdv" id="ujR-r1-64E"/>
+                <outlet property="secondPlayerTF" destination="UtB-Wr-huR" id="isj-6H-DqB"/>
                 <outlet property="thirdPlayerNameLabel" destination="Ycv-Xq-CEP" id="mlw-eJ-whT"/>
-                <outlet property="thirdPlayerTF" destination="nFB-4F-DGu" id="chT-ya-eVe"/>
+                <outlet property="thirdPlayerTF" destination="1R9-8r-Wy2" id="jSc-dl-7w0"/>
             </connections>
             <point key="canvasLocation" x="477.536231884058" y="145.98214285714286"/>
         </collectionViewCell>

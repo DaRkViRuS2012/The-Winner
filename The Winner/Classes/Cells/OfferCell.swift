@@ -12,6 +12,7 @@ class OfferCell: UICollectionViewCell {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLable: UILabel!
+    @IBOutlet weak var startImageView: UIImageView!
     
     
     var offer:Offer?{
@@ -27,6 +28,12 @@ class OfferCell: UICollectionViewCell {
             
             if let cover = offer.cover{
                 imageView.setImageForURL(cover, placeholder: nil)
+            }
+            
+            if let priroty = offer.priority , priroty != "0"{
+                self.startImageView.isHidden = false
+            }else{
+                self.startImageView.isHidden = true
             }
         }
     }
